@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faelan Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,20 +13,20 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #eee;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a202c;
+            color: #edf2f7;
             font-size: 18px;
             line-height: 1.6;
         }
 
         h1, h2, h3 {
-            color: #f00;
+            color: #2b6cb0;
             margin-bottom: 20px;
         }
 
         a {
-            color: #f00;
+            color: #2b6cb0;
             text-decoration: none;
         }
 
@@ -55,15 +56,42 @@
         #contact {
             margin-bottom: 0;
         }
+
+        header {
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        #about img {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        #about::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <header>
+            <img src="icon-placeholder.png" alt="Faelan Games Icon">
             <h1>Rui Filipe | Faelan Games</h1>
         </header>
         <section id="about">
             <h2>About</h2>
+            <img src="image-placeholder.jpg" alt="Rui Filipe">
             <p>My name is Rui Filipe, and I'm a passionate software developer with over 4 years of experience working as a Full Stack Developer on diverse projects. Throughout my career, I've been fascinated by the world of video games and have spent a considerable amount of time honing my skills in Unity. Recently, I made the decision to take my passion a step further and embark on the exciting journey of developing my very own video game. Welcome to Faelan Games, where imagination meets innovation!</p>
         </section>
         <section id="portfolio">
@@ -77,7 +105,6 @@
         <section id="social-media">
             <h2>Follow Faelan Games</h2>
             <ul>
-                <li><a href="https://linktr.ee/FaelanGames">linktr.ee/FaelanGames</a></li>
                 <li><a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc">TikTok</a></li>
                 <li><a href="https://ko-fi.com/faelangames">Ko-fi</a></li>
                 <li><a href="https://www.youtube.com/@faelangames735/about">YouTube</a></li>
