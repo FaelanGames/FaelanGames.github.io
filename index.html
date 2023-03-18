@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faelan Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" crossorigin="anonymous">
     <style>
         * {
             margin: 0;
@@ -45,7 +46,7 @@
         }
 		
         .card {
-            background-color: #393e46; /* Updated card background color */
+            background-color: #393e46; 
             border-radius: 5px;
             padding: 20px;
             margin-bottom: 40px;
@@ -106,12 +107,38 @@
 		}
 
 		.asset-card {
+			display: flex; 
+			justify-content: space-between; 
+			height: 250px;
 			background-color: #222831;
 			border-radius: 5px;
 			padding: 20px;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 			flex: 1 1 300px;
 			margin-bottom: 20px;
+		}
+		
+		.asset-card .card-content {
+			display: flex;
+			flex-direction: column;
+			flex: 1; 
+			margin-right: 20px;
+			height: 100%;
+		}
+
+		.asset-card .card-content .description {
+			flex-grow: 1;
+		}
+
+		.asset-card .card-content .download-wrapper {
+			align-self: flex-start; /* Add this line */
+		}
+
+		.asset-card img {
+			max-width: 50%; 
+			height: 100%; 
+			border-radius: 5px; 
+			object-fit: cover;
 		}
 
 		.download-button {
@@ -127,6 +154,21 @@
 
 		.download-button:hover {
 			background-color: #008793;
+		}
+		
+		.icon-container {
+			display: flex;
+			gap: 30px; /* Increased gap between icons */
+		}
+
+		.icon-container a {
+			font-size: 1.5em;
+			text-decoration: none;
+			color: #00adb5;
+		}
+
+		.icon-container a:hover {
+			color: #008793;
 		}
     </style>
 </head>
@@ -145,9 +187,14 @@
             <h2>Portfolio</h2>
             <div class="portfolio-grid">
 				<div class="asset-card">
-					<h3>Day Night Cycle Asset</h3>
-					<p>A dynamic day-night cycle system for your Unity project.</p>
-					<a href="unity_assets/DayNightCycleAsset.unitypackage" download class="download-button">Download</a>
+					<div class="card-content">
+						<h3>Day Night Cycle Asset</h3>
+						<p class="description">A dynamic day-night cycle system for your Unity project.</p>
+						<div class="download-wrapper">
+							<a href="unity_assets/day_night_cycle_asset/DayNightCycleAsset.unitypackage" download class="download-button">Download</a>
+						</div>
+					</div>
+					<img src="unity_assets/day_night_cycle_asset/img_main.png" alt="Day Night Cycle Asset">
 				</div>
 			</div>
         </section>
@@ -156,13 +203,19 @@
             <p>Email: <a href="mailto:faelangames2022@gmail.com">faelangames2022@gmail.com</a></p>
         </section>
         <section id="social-media" class="card">
-            <h2>Follow Faelan Games</h2>
-            <ul>
-                <li><a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc">TikTok</a></li>
-                <li><a href="https://ko-fi.com/faelangames">Ko-fi</a></li>
-                <li><a href="https://www.youtube.com/@faelangames735/about">YouTube</a></li>
-            </ul>
-        </section>
+			<h2>Follow Faelan Games</h2>
+			<div class="icon-container">
+				<a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc" target="_blank" title="Follow on TikTok">
+					<i class="fab fa-tiktok"></i>
+				</a>
+				<a href="https://ko-fi.com/faelangames" target="_blank" title="Support on Ko-fi">
+					<i class="fas fa-coffee"></i>
+				</a>
+				<a href="https://www.youtube.com/@faelangames735/about" target="_blank" title="Subscribe on YouTube">
+					<i class="fab fa-youtube"></i>
+				</a>
+			</div>
+		</section>
     </div>
 </body>
 </html>
