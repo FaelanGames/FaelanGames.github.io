@@ -12,21 +12,21 @@
             box-sizing: border-box;
         }
 
-        body {
+		body {
             font-family: 'Roboto', sans-serif;
-            background-color: #1a202c;
-            color: #edf2f7;
+            background-color: #222831; /* Updated background color */
+            color: #eeeeee; /* Updated text color */
             font-size: 18px;
             line-height: 1.6;
         }
 
         h1, h2, h3 {
-            color: #2b6cb0;
+            color: #00adb5; /* Updated heading color */
             margin-bottom: 20px;
         }
 
         a {
-            color: #2b6cb0;
+            color: #00adb5; /* Updated link color */
             text-decoration: none;
         }
 
@@ -39,10 +39,22 @@
             margin: 20px auto;
             padding: 20px;
         }
-
+		
         section {
             margin-bottom: 40px;
         }
+		
+        .card {
+            background-color: #393e46; /* Updated card background color */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+		.card h2 {
+			margin-top: 0;
+		}
 
         ul {
             list-style: none;
@@ -51,10 +63,11 @@
 
         ul li {
             margin-bottom: 10px;
+            transition: transform 0.3s; /* Added transition for smooth hover effect */
         }
 
-        #contact {
-            margin-bottom: 0;
+        ul li:hover {
+            transform: translateX(10px); /* Added hover effect on social media links */
         }
 
         header {
@@ -63,46 +76,86 @@
         }
 
         header img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
+			width: 80px;
+			height: auto;
+			margin-right: 10px;
+		}
+		
+		#about {
+			text-align: justify;
+		}
 
         #about img {
-            float: left;
-            width: 200px;
-            height: 200px;
-            margin-right: 20px;
-            margin-bottom: 20px;
-        }
+			float: left;
+			width: 150px;
+			height: auto;
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
 
         #about::after {
             content: '';
             display: table;
             clear: both;
         }
+		
+		.portfolio-grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+
+		.asset-card {
+			background-color: #222831;
+			border-radius: 5px;
+			padding: 20px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			flex: 1 1 300px;
+			margin-bottom: 20px;
+		}
+
+		.download-button {
+			display: inline-block;
+			background-color: #00adb5;
+			color: #eeeeee;
+			padding: 10px 20px;
+			border-radius: 5px;
+			margin-top: 10px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.download-button:hover {
+			background-color: #008793;
+		}
     </style>
 </head>
 <body>
     <div id="container">
         <header>
-            <img src="icon-placeholder.png" alt="Faelan Games Icon">
+            <img src="img/Icon.png" alt="Faelan Games Icon">
             <h1>Rui Filipe | Faelan Games</h1>
         </header>
-        <section id="about">
+        <section id="about" class="card">
             <h2>About</h2>
-            <img src="image-placeholder.jpg" alt="Rui Filipe">
+            <img src="img/Self_photo.jpg" alt="Rui Filipe">
             <p>My name is Rui Filipe, and I'm a passionate software developer with over 4 years of experience working as a Full Stack Developer on diverse projects. Throughout my career, I've been fascinated by the world of video games and have spent a considerable amount of time honing my skills in Unity. Recently, I made the decision to take my passion a step further and embark on the exciting journey of developing my very own video game. Welcome to Faelan Games, where imagination meets innovation!</p>
         </section>
-        <section id="portfolio">
+        <section id="portfolio" class="card">
             <h2>Portfolio</h2>
-            <p>Coming soon! Stay tuned for exciting Unity assets and game projects.</p>
+            <div class="portfolio-grid">
+				<div class="asset-card">
+					<h3>Day Night Cycle Asset</h3>
+					<p>A dynamic day-night cycle system for your Unity project.</p>
+					<a href="unity_assets/DayNightCycleAsset.unitypackage" download class="download-button">Download</a>
+				</div>
+			</div>
         </section>
-        <section id="contact">
+        <section id="contact" class="card">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:faelangames2022@gmail.com">faelangames2022@gmail.com</a></p>
         </section>
-        <section id="social-media">
+        <section id="social-media" class="card">
             <h2>Follow Faelan Games</h2>
             <ul>
                 <li><a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc">TikTok</a></li>
