@@ -6,225 +6,102 @@
     <title>Faelan Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" crossorigin="anonymous">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-		body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #222831; /* Updated background color */
-            color: #eeeeee; /* Updated text color */
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            color: #00adb5; /* Updated heading color */
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #00adb5; /* Updated link color */
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        #container {
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-		
-        section {
-            margin-bottom: 40px;
-        }
-		
-        .card {
-            background-color: #393e46; 
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-		.card h2 {
-			margin-top: 0;
-		}
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            transition: transform 0.3s; /* Added transition for smooth hover effect */
-        }
-
-        ul li:hover {
-            transform: translateX(10px); /* Added hover effect on social media links */
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-        }
-
-        header img {
-			width: 80px;
-			height: auto;
-			margin-right: 10px;
-		}
-		
-		#about {
-			text-align: justify;
-		}
-
-        #about img {
-			float: left;
-			width: 150px;
-			height: auto;
-			margin-right: 20px;
-			margin-bottom: 20px;
-		}
-
-        #about::after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-		
-		.portfolio-grid {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 20px;
-		}
-
-		.asset-card {
-			display: flex; 
-			justify-content: space-between; 
-			height: 250px;
-			background-color: #222831;
-			border-radius: 5px;
-			padding: 20px;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			flex: 1 1 300px;
-			margin-bottom: 20px;
-		}
-		
-		.asset-card .card-content {
-			display: flex;
-			flex-direction: column;
-			flex: 1; 
-			margin-right: 20px;
-			height: 100%;
-		}
-
-		.asset-card .card-content .description {
-			flex-grow: 1;
-		}
-
-		.asset-card .card-content .download-wrapper {
-			align-self: flex-start; /* Add this line */
-		}
-
-		.asset-card img {
-			max-width: 50%; 
-			height: 100%; 
-			border-radius: 5px; 
-			object-fit: cover;
-		}
-
-		.download-button {
-			display: inline-block;
-			background-color: #00adb5;
-			color: #eeeeee;
-			padding: 10px 20px;
-			border-radius: 5px;
-			margin-top: 10px;
-			text-decoration: none;
-			font-weight: bold;
-		}
-
-		.download-button:hover {
-			background-color: #008793;
-		}
-		
-		.icon-container {
-			display: flex;
-			gap: 30px; /* Increased gap between icons */
-		}
-
-		.icon-container a {
-			font-size: 1.5em;
-			text-decoration: none;
-			color: #00adb5;
-		}
-
-		.icon-container a:hover {
-			color: #008793;
-		}
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div id="container">
-        <header>
-            <img src="img/Icon.png" alt="Faelan Games Icon">
-            <h1>Faelan Games</h1>
-        </header>
-        <section id="about" class="card">
-            <h2>About</h2>
-            <!-- <img src="img/Self_photo.jpg" alt="Rui"> -->
-            <p>My name is Rui, and I'm a passionate software developer with over 4 years of experience working as a Full Stack Developer on diverse projects. Throughout my career, I've been fascinated by the world of video games and have spent a considerable amount of time honing my skills in Unity. Recently, my wife and I made the decision to take our passion as gamers a step further and embark on the exciting journey of developing our very own video game together. Welcome to Faelan Games, a project started from a dream!</p>
+    <div class="container py-5">
+        <header class="bg-dark py-3 mb-5">
+		  <div class="container d-flex justify-content-between align-items-center">
+			<div class="d-flex align-items-center">
+			  <img src="img/Icon.png" alt="Faelan Games Icon" width="80" class="me-3">
+			  <h1 class="h2 mb-0">Faelan Games</h1>
+			</div>
+			<nav class="ms-auto">
+			  <ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="#portfolio">Packages</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				<li class="nav-item"><a class="nav-link" href="#social-media">Follow Us</a></li>
+			  </ul>
+			</nav>
+		  </div>
+		</header>
+        <section id="about" class="card mb-5">
+            <h2 class="card-header">About</h2>
+            <div class="card-body">
+                <!-- <img src="img/Self_photo.jpg" alt="Rui"> -->
+                <p class="card-text">My name is Rui, and I'm a passionate software developer with over 4 years of experience working as a Full Stack Developer on diverse projects. Throughout my career, I've been fascinated by the world of video games and have spent a considerable amount of time honing my skills in Unity. Recently, my wife and I made the decision to take our passion as gamers a step further and embark on the exciting journey of developing our very own video game together. Welcome to Faelan Games, a project started from a dream!</p>
+            </div>
         </section>
-        <section id="portfolio" class="card">
-            <h2>Portfolio</h2>
-            <div class="portfolio-grid">
-				<div class="asset-card">
-					<div class="card-content">
-						<h3>Day Night Cycle Asset</h3>
-						<p class="description">A dynamic day-night cycle system for your Unity project.</p>
-						<div class="download-wrapper">
-							<a href="unity_assets/day_night_cycle_asset/DayNightCycleAsset.unitypackage" download class="download-button">Download</a>
+        <section id="portfolio" class="card mb-5">
+            <h2 class="card-header">Packages</h2>
+            <div class="row d-flex justify-content-center">
+				<div class="col-md-4">
+					<div class="card inner-card m-1">
+						<div class="d-flex justify-content-center mt-1">
+							<img src="unity_assets/day_night_cycle_asset/DayNightCycleAsset_02.png" alt="Day Night Cycle Asset" class="card-img-top" style="max-width: 300px; height: auto;">
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Day Night Cycle Asset</h3>
+							<p class="card-text inner-card-text">A dynamic day-night cycle system for your Unity project.</p>
+							<div class="d-flex justify-content-between align-items-center">
+								<a href="unity_assets/day_night_cycle_asset/DayNightCycleAsset_1_1_0.unitypackage" download class="btn btn-primary">Download</a>
+								<a href="DayNightCycle.html" class="btn btn-outline-primary">View More</a>
+							</div>
 						</div>
 					</div>
-					<img src="unity_assets/day_night_cycle_asset/img_main.png" alt="Day Night Cycle Asset">
 				</div>
+				<!-- <div class="col-md-4"> -->
+					<!-- <div class="card inner-card m-1"> -->
+						<!-- <div class="d-flex justify-content-center mt-1"> -->
+							<!-- <img src="unity_assets/day_night_cycle_asset/DayNightCycleAsset_02.png" alt="Day Night Cycle Asset" class="card-img-top" style="max-width: 300px; height: auto;"> -->
+						<!-- </div> -->
+						<!-- <div class="card-body"> -->
+							<!-- <h3 class="card-title">Wallet System</h3> -->
+							<!-- <p class="card-text inner-card-text">A dynamic day-night cycle system for your Unity project.</p> -->
+							<!-- <div class="d-flex justify-content-between align-items-center"> -->
+								<!-- <a href="unity_assets/day_night_cycle_asset/DayNightCycleAsset.unitypackage" download class="btn btn-primary">Download</a> -->
+								<!-- <a href="details.html" class="btn btn-outline-primary">View More</a> -->
+							<!-- </div> -->
+						<!-- </div> -->
+					<!-- </div> -->
+				<!-- </div> -->
 			</div>
         </section>
-        <section id="contact" class="card">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:faelangames2022@gmail.com">faelangames2022@gmail.com</a></p>
+        <section id="contact" class="card mb-5">
+            <h2 class="card-header">Contact</h2>
+            <div class="card-body">
+                <p class="card-text">Email: <a href="mailto:faelangames2022@gmail.com">faelangames2022@gmail.com</a></p>
+            </div>
         </section>
         <section id="social-media" class="card">
-			<h2>Follow Faelan Games</h2>
-			<div class="icon-container">
-				<a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc" target="_blank" title="Follow on TikTok">
-					<i class="fab fa-tiktok"></i>
-				</a>
-				<a href="https://ko-fi.com/faelangames" target="_blank" title="Support on Ko-fi">
-					<i class="fas fa-coffee"></i>
-				</a>
-				<a href="https://www.youtube.com/@faelangames735/about" target="_blank" title="Subscribe on YouTube">
-					<i class="fab fa-youtube"></i>
-				</a>
+			<h2 class="card-header">Follow Faelan Games</h2>
+			<div class="card-body">
+				<div class="d-flex justify-content-center">
+					<a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc" target="_blank" title="Follow on TikTok" class="btn btn-primary me-2">
+						<i class="fab fa-tiktok"></i> TikTok
+					</a>
+					<a href="https://ko-fi.com/faelangames" target="_blank" title="Support on Ko-fi" class="btn btn-primary me-2">
+						<i class="fas fa-coffee"></i> Ko-fi
+					</a>
+					<a href="https://www.youtube.com/@faelangames735/about" target="_blank" title="Subscribe on YouTube" class="btn btn-primary me-2">
+						<i class="fab fa-youtube"></i> YouTube
+					</a>
+					<a href="https://www.facebook.com/profile.php?id=100090205163415" target="_blank" title="Follow on Facebook" class="btn btn-primary">
+						<i class="fab fa-facebook"></i> Facebook
+					</a>
+				</div>
 			</div>
 		</section>
-    </div>
+	</div>
 	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 	<script>
 	  kofiWidgetOverlay.draw('faelangames', {
 		'type': 'floating-chat',
 		'floating-chat.donateButton.text': 'Support Us',
-		'floating-chat.donateButton.background-color': '#00adb5',
-		'floating-chat.donateButton.text-color': '#323842'
+		'floating-chat.donateButton.background-color': '#444',
+		'floating-chat.donateButton.text-color': '#fff'
 	  });
 	</script>
 </body>
-</html>
