@@ -63,3 +63,8 @@ iframe {
 	margin: 0 auto; /* center the image horizontally */
 	display: block; /* remove any default margin or padding */
 }
+
+.height-575 {
+	min-height: 575px;
+	max-height: 575px;
+}

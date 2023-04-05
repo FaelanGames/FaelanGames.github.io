@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Day Night Cycle Asset Details</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="container py-5">
+		<header class="bg-dark py-3 mb-5">
+		  <div class="container d-flex justify-content-between align-items-center">
+			<div class="d-flex align-items-center">
+			  <img src="img/Icon.png" alt="Faelan Games Icon" width="80" class="me-3">
+			  <h1 class="h2 mb-0">Faelan Games</h1>
+			</div>
+			<nav class="ms-auto">
+			  <ul class="nav justify-content-end">
+				<li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
+			  </ul>
+			</nav>
+		  </div>
+		</header>
+		<section class="card mb-5">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-8">
+						<iframe src="https://www.youtube.com/embed/mV23Gzlzp0s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Day Night Cycle Asset Video"></iframe>
+					</div>
+					<div class="col-md-4">
+						<div class="card inner-card m-1">
+							<div class="card-body">
+								<h3 class="card-title">Download</h3>
+								<p class="card-text inner-card-text">Get the Day Night Cycle Asset for Unity today and start creating immersive environments for your games!</p>
+								<a href="unity_assets/wallet_system_asset/CurrencyManagerAsset_1_1_0.unitypackage" download class="btn btn-primary">Download Now</a>
+							</div>
+						</div>
+					</div>					
+					<div class="col-md-12">
+						<h2 class="card-title">Currency Manager</h2>
+						<p class="card-text">Manage multiple in-game currencies with ease. Add, subtract, exchange currencies, and track balances. Simplify your game economy using Currency Manager.</p>
+						<div id="images-section">
+							<h3>Images</h3>
+							<div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img src="unity_assets/wallet_system_asset/CurrencyManagerAsset_01.png" alt="Day Night Cycle Asset Image 1">
+									</div>
+									<div class="carousel-item">
+										<img src="unity_assets/wallet_system_asset/CurrencyManagerAsset_02.png" alt="Day Night Cycle Asset Image 2">
+									</div>
+								</div>
+								<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="visually-hidden">Next</span>
+								</button>
+							</div>
+						</div>
+						<div id="description-section">
+							<h3>Description</h3>
+							<p class="card-text">Currency Manager is a versatile tool for managing multiple in-game currencies with added transactions, and the ability to export and import using JSON for save purposes. Easily add, subtract, and exchange currencies while tracking balances, and adapt the system to your project's needs for efficient and user-friendly management of in-game transactions and currency exchanges. Perfect for RPGs, strategy, and simulation games.</p>
+						</div>
+						<div id="changelog-section">
+							<h3>Changelog</h3>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">Version 1.1.0 (2023-03-24)
+									<ul>
+										<li>Added events for when a currency is added, subtracted, or exchanged.</li>
+										<li>Added the ability to save transaction history for each transaction type.</li>
+										<li>Added the ability to get and set the currencies balances and transactions using a JSON file for save purposes.</li>
+										<li>Improved error handling for insufficient balance or invalid input.</li>
+										<li>Updated the WalletDemo script to demonstrate the new features.</li>
+										<li>Updated the README file to reflect the changes in the new version.</li>
+									</ul>
+								</li>
+								<li class="list-group-item">Version 1.0.0 (2023-03-20)
+									<ul>
+										<li>Initial release of Currency Manager.</li>
+										<li>Support for managing multiple currencies with add, subtract, and get balance functions.</li>
+										<li>Ability to perform currency exchanges with customizable exchange rates.</li>
+										<li>Wallet component for managing currencies in a Unity scene.</li>
+										<li>Unity editor integration with ScriptableObjects for creating Currency assets.</li>
+										<li>Example WalletDemo script to demonstrate basic usage of the Wallet component.</li>
+										<li>Unit tests to ensure correct functionality of the Wallet component.</li>
+										<li>README file.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+	<script>
+	  kofiWidgetOverlay.draw('faelangames', {
+		'type': 'floating-chat',
+		'floating-chat.donateButton.text': 'Support Us',
+		'floating-chat.donateButton.background-color': '#444',
+		'floating-chat.donateButton.text-color': '#fff'
+	  });
+	</script>
+</body>
+</html>
