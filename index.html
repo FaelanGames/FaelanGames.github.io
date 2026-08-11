@@ -3,108 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faelan Games</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/main.css">
+
+    <title>Faelan Games | Independent Mobile Games</title>
+
+    <meta
+        name="description"
+        content="Faelan Games is an independent game studio developing mobile games for Android."
+    >
+
+    <link rel="stylesheet" href="css/site.css">
 </head>
+
 <body>
-    <div class="container py-5">
-        <header class="bg-dark py-3 mb-5">
-		  <div class="container d-flex justify-content-between align-items-center">
-			<div class="d-flex align-items-center">
-			  <img src="img/Icon.png" alt="Faelan Games Icon" width="80" class="me-3">
-			  <h1 class="h2 mb-0">Faelan Games</h1>
-			</div>
-			<nav class="ms-auto">
-			  <ul class="nav justify-content-end">
-				<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-				<li class="nav-item"><a class="nav-link" href="#portfolio">Packages</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-				<li class="nav-item"><a class="nav-link" href="#social-media">Follow Us</a></li>
-			  </ul>
-			</nav>
-		  </div>
-		</header>
-        <section id="about" class="card mb-5">
-            <h2 class="card-header">About</h2>
-            <div class="card-body">
-                <!-- <img src="img/Self_photo.jpg" alt="Rui"> -->
-                <p class="card-text">My name is Rui, and I'm a passionate software developer with over 4 years of experience working as a Full Stack Developer on diverse projects. Throughout my career, I've been fascinated by the world of video games and have spent a considerable amount of time honing my skills in Unity. Recently, my wife and I made the decision to take our passion as gamers a step further and embark on the exciting journey of developing our very own video game together. Welcome to Faelan Games, a project started from a dream!</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home" aria-label="Faelan Games home">
+                <img
+                    src="img/Icon.png"
+                    alt=""
+                    class="brand-logo"
+                >
+                <span>Faelan Games</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="#games">Games</a>
+                <a href="#about">About</a>
+                <a href="#support">Support</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <p class="eyebrow">Independent game development</p>
+
+                <h1>Games built to be played, enjoyed and returned to.</h1>
+
+                <p class="hero-copy">
+                    Faelan Games is an independent game studio developing
+                    mobile games for Android, from relaxing puzzles to
+                    farming and strategy experiences.
+                </p>
+
+                <a class="primary-button" href="#games">
+                    Explore our games
+                </a>
             </div>
         </section>
-        <section id="portfolio" class="card mb-5">
-            <h2 class="card-header">Packages</h2>
-            <div class="row d-flex justify-content-center">
-			<div class="row d-flex justify-content-center height-575">
-				<div class="col-md-4 d-flex flex-column">
-					<div class="card inner-card m-1 flex-fill">
-						<div class="d-flex justify-content-center m-auto">
-							<img src="unity_assets/day_night_cycle_asset/DayNightCycleAsset_02.png" alt="Day Night Cycle Asset" class="card-img-top" style="max-width: 300px; height: auto;">
+
+        <section id="games" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Our games</p>
+                    <h2>Currently in development</h2>
+
+                    <p>
+                        We are currently developing several mobile games.
+                        Titles and details may change as development continues.
+                    </p>
+                </div>
+
+				<div class="game-grid">
+					<article class="game-card">
+						<div class="game-card-header">
+							<span class="game-type">Farming</span>
 						</div>
-						<div class="card-body mt-auto">
-							<h3 class="card-title">Day Night Cycle Asset</h3>
-							<p class="card-text inner-card-text">A dynamic day-night cycle system for your Unity project.</p>
-							<div class="d-flex justify-content-between align-items-center">
-								<a href="unity_assets/day_night_cycle_asset/DayNightCycleAsset_1_1_0.unitypackage" download class="btn btn-primary">Download</a>
-								<a href="DayNightCycle.html" class="btn btn-outline-primary">View More</a>
-							</div>
+
+						<div class="game-title-row">
+							<h3>Endless Harvest</h3>
 						</div>
-					</div>
+
+						<p>
+							Build and grow your own farm, plant and harvest
+							crops, earn rewards, expand your land and develop
+							your farm over time.
+						</p>
+
+						<div class="game-meta">
+							<span>Android</span>
+							<span>In development</span>
+						</div>
+					</article>
+
+					<article class="game-card">
+						<div class="game-card-header">
+							<span class="game-type">Puzzle</span>
+						</div>
+
+						<div class="game-title-row">
+							<h3>Endless Arrow Puzzle</h3>
+							<span class="working-title">Working title</span>
+						</div>
+
+						<p>
+							A logic puzzle where every arrow needs a clear
+							escape route. Remove the arrows in the right order
+							without colliding with the others.
+						</p>
+
+						<div class="game-meta">
+							<span>Android</span>
+							<span>In development</span>
+						</div>
+					</article>
+
+					<article class="game-card">
+						<div class="game-card-header">
+							<span class="game-type">Puzzle</span>
+						</div>
+
+						<div class="game-title-row">
+							<h3>Endless Bottled Colours</h3>
+							<span class="working-title">Working title</span>
+						</div>
+
+						<p>
+							A relaxing colour-sorting puzzle where mixed
+							colours are organised into matching bottles.
+						</p>
+
+						<div class="game-meta">
+							<span>Android</span>
+							<span>In development</span>
+						</div>
+					</article>
+
+					<article class="game-card">
+						<div class="game-card-header">
+							<span class="game-type">Strategy</span>
+						</div>
+
+						<div class="game-title-row">
+							<h3>Mobile Strategy</h3>
+							<span class="working-title">Working title</span>
+						</div>
+
+						<p>
+							A settlement-building strategy game focused on
+							growing a village, managing resources, developing
+							your population and expanding your settlement.
+						</p>
+
+						<div class="game-meta">
+							<span>Android</span>
+							<span>In development</span>
+						</div>
+					</article>
 				</div>
-				<div class="col-md-4 d-flex flex-column">
-					<div class="card inner-card m-1 flex-fill">
-						<div class="d-flex justify-content-center m-auto">
-							<img src="unity_assets/wallet_system_asset/CurrencyManagerAsset_01.png" alt="Day Night Cycle Asset" class="card-img-top" style="max-width: 300px; height: auto;">
-						</div>
-						<div class="d-flex">
-							<div class="card-body">
-								<h3 class="card-title">Currency Manager</h3>
-								<p class="card-text inner-card-text">A dynamic day-night cycle system for your Unity project.</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<a href="unity_assets/wallet_system_asset/CurrencyManagerAsset_1_1_0.unitypackage" download class="btn btn-primary">Download</a>
-									<a href="CurrencyManager.html" class="btn btn-outline-primary">View More</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-        </section>
-        <section id="contact" class="card mb-5">
-            <h2 class="card-header">Contact</h2>
-            <div class="card-body">
-                <p class="card-text">Email: <a href="mailto:faelangames2022@gmail.com">faelangames2022@gmail.com</a></p>
             </div>
         </section>
-        <section id="social-media" class="card">
-			<h2 class="card-header">Follow Faelan Games</h2>
-			<div class="card-body">
-				<div class="d-flex justify-content-center">
-					<a href="https://www.tiktok.com/@faelangames?is_from_webapp=1&sender_device=pc" target="_blank" title="Follow on TikTok" class="btn btn-primary me-2">
-						<i class="fab fa-tiktok"></i> TikTok
-					</a>
-					<a href="https://ko-fi.com/faelangames" target="_blank" title="Support on Ko-fi" class="btn btn-primary me-2">
-						<i class="fas fa-coffee"></i> Ko-fi
-					</a>
-					<a href="https://www.youtube.com/@faelangames735/about" target="_blank" title="Subscribe on YouTube" class="btn btn-primary me-2">
-						<i class="fab fa-youtube"></i> YouTube
-					</a>
-					<a href="https://www.facebook.com/profile.php?id=100090205163415" target="_blank" title="Follow on Facebook" class="btn btn-primary">
-						<i class="fab fa-facebook"></i> Facebook
-					</a>
-				</div>
-			</div>
-		</section>
-	</div>
-	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-	<script>
-	  kofiWidgetOverlay.draw('faelangames', {
-		'type': 'floating-chat',
-		'floating-chat.donateButton.text': 'Support Us',
-		'floating-chat.donateButton.background-color': '#444',
-		'floating-chat.donateButton.text-color': '#fff'
-	  });
-	</script>
+
+        <section id="about" class="section section-alt">
+            <div class="container narrow">
+                <p class="eyebrow">About us</p>
+
+                <h2>Faelan Games</h2>
+
+                <p class="large-copy">
+                    We are a small independent game development team creating
+                    games we would want to play ourselves.
+                </p>
+
+                <p>
+                    Our projects range from casual puzzle games to farming and
+                    strategy experiences. We are currently focused on Android,
+                    with our games planned for release through Google Play.
+                </p>
+            </div>
+        </section>
+
+        <section id="support" class="section">
+            <div class="container narrow">
+                <p class="eyebrow">Player support</p>
+
+                <h2>Need help with one of our games?</h2>
+
+                <p>
+                    Dedicated support and privacy pages for each game will be
+                    added as they approach release.
+                </p>
+
+                <p>
+                    For now, you can contact us directly by email.
+                </p>
+
+                <a
+                    class="secondary-button"
+                    href="mailto:faelangames2022@gmail.com"
+                >
+                    Contact support
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="container narrow">
+                <p class="eyebrow">Contact</p>
+
+                <h2>Get in touch</h2>
+
+                <p>
+                    Email:
+                    <a href="mailto:faelangames2022@gmail.com">
+                        faelangames2022@gmail.com
+                    </a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Faelan Games</p>
+
+            <div class="footer-links">
+                <a href="#support">Support</a>
+                <span>Privacy pages coming soon</span>
+            </div>
+        </div>
+    </footer>
 </body>
+</html>
