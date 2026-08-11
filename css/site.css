@@ -698,14 +698,6 @@ h3 {
     font-size: 0.9rem;
 }
 
-.policy-note {
-    padding: 18px;
-
-    background: var(--surface);
-    border: 1px solid var(--accent);
-    border-radius: 10px;
-}
-
 @media (max-width: 900px) {
     .game-page-heading {
         grid-template-columns: 1fr;
