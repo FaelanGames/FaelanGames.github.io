@@ -616,6 +616,65 @@ h3 {
     text-align: center;
 }
 
+/*
+ * Game pages without store artwork run their heading as one column so the
+ * copy fills the width instead of leaving an empty art slot beside it.
+ */
+.game-page-heading-wide {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+/* Feature highlights */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.feature-card {
+    padding: 28px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.section-alt .feature-card {
+    background: var(--surface-alt);
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 1.35rem;
+}
+
+.feature-card p {
+    margin: 0;
+
+    color: var(--text-muted);
+}
+
+.callout {
+    margin: 28px 0;
+    padding: 24px 26px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+}
+
+.section-alt .callout {
+    background: var(--surface-alt);
+}
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
 /* Standard content pages */
 
 .page-hero {
@@ -753,6 +812,18 @@ h3 {
     color: var(--accent-hover);
 }
 
+.policy-content code {
+    padding: 2px 6px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    font-size: 0.92em;
+
+    overflow-wrap: anywhere;
+}
+
 .policy-content ul {
     padding-left: 24px;
 }
@@ -786,6 +857,10 @@ h3 {
 
     .game-details-card {
         max-width: 600px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -827,7 +902,8 @@ h3 {
         padding: 70px 0;
     }
 
-    .game-grid {
+    .game-grid,
+    .feature-grid {
         grid-template-columns: 1fr;
     }
 
