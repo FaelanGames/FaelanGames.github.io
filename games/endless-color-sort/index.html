@@ -61,14 +61,22 @@
                     &larr; Back to games
                 </a>
 
-                <!--
-                    Store artwork sits here once the current Endless Color Sort
-                    assets are copied into this repository. The heading runs as
-                    a single column in the meantime rather than showing
-                    placeholder art.
-                -->
-                <div class="game-page-heading game-page-heading-wide">
+                <div class="game-page-heading">
                     <div class="game-page-title">
+                        <!--
+                            The emblem already spells out the game name, so it
+                            is marked decorative and the h1 beside it carries
+                            the name for assistive technology and search.
+                        -->
+                        <img
+                            class="game-logo"
+                            src="../../img/endless-color-sort/logo.png"
+                            alt=""
+                            width="480"
+                            height="480"
+                            decoding="async"
+                        >
+
                         <p class="eyebrow">Puzzle game</p>
 
                         <div class="title-with-status">
@@ -86,6 +94,16 @@
                             <span>Coming soon</span>
                             <span>No forced ads</span>
                         </div>
+                    </div>
+
+                    <div class="game-hero-shot">
+                        <img
+                            src="../../img/endless-color-sort/daily-gameplay.webp"
+                            alt="A Daily Challenge in progress, with part-sorted colour bottles arranged over a bamboo table."
+                            width="810"
+                            height="1440"
+                            decoding="async"
+                        >
                     </div>
                 </div>
             </div>
@@ -288,13 +306,59 @@
             </div>
         </section>
 
-        <!--
-            Screenshot gallery goes here once the current store screenshots are
-            available in this repository: current gameplay, Daily gameplay,
-            Daily calendar, Background Collection and Bottle Collection.
-        -->
-
         <section class="section section-alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Screenshots</p>
+
+                    <h2>A look at the game</h2>
+
+                    <p>
+                        Every screen below is from the current build.
+                    </p>
+                </div>
+
+                <div class="screenshot-gallery">
+                    <img
+                        src="../../img/endless-color-sort/no-forced-ads.webp"
+                        alt="A numbered level in progress, showing the power controls along the bottom of the screen."
+                        width="810"
+                        height="1440"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <img
+                        src="../../img/endless-color-sort/daily-calendar.webp"
+                        alt="The Daily Challenge calendar for a month, with completed days marked and earlier days still available to play."
+                        width="810"
+                        height="1440"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <img
+                        src="../../img/endless-color-sort/backgrounds.webp"
+                        alt="The Background Collection screen, showing unlocked board backgrounds alongside ones still to earn."
+                        width="810"
+                        height="1440"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <img
+                        src="../../img/endless-color-sort/bottles.webp"
+                        alt="The Bottle Collection screen, showing unlocked bottle styles and the style currently equipped."
+                        width="810"
+                        height="1440"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
             <div class="container narrow">
                 <p class="eyebrow">Release</p>
 
@@ -312,7 +376,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section-alt">
             <div class="container narrow">
                 <p class="eyebrow">Support &amp; privacy</p>
 

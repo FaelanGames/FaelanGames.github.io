@@ -617,11 +617,59 @@ h3 {
 }
 
 /*
- * Game pages without store artwork run their heading as one column so the
- * copy fills the width instead of leaving an empty art slot beside it.
+ * The game emblem sits above the page title. It is sized in CSS rather than
+ * by its width/height attributes, which are there to reserve the right
+ * space while the image loads.
  */
-.game-page-heading-wide {
-    grid-template-columns: minmax(0, 1fr);
+.game-logo {
+    width: clamp(150px, 22vw, 240px);
+    height: auto;
+
+    margin-bottom: 22px;
+}
+
+/*
+ * Phone screenshots are 9:16, so a portrait shot dropped into the hero
+ * column would run absurdly tall on a wide screen. Capping the width keeps
+ * the image beside the title rather than towering over it.
+ */
+.game-hero-shot {
+    display: flex;
+    justify-content: center;
+}
+
+.game-hero-shot img {
+    width: auto;
+    height: auto;
+    max-width: min(100%, 320px);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Screenshot gallery */
+
+/*
+ * Four portrait screenshots across the content width land at roughly 280px
+ * each, which keeps the baked-in captions readable without the shots
+ * dominating the page. The grid stays flush with the section heading at
+ * every width rather than centring itself under it.
+ */
+.screenshot-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.screenshot-gallery img {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 /* Feature highlights */
@@ -838,6 +886,17 @@ h3 {
     font-size: 0.9rem;
 }
 
+/*
+ * The gallery drops to two columns ahead of the site's usual 900px step so
+ * a screenshot never gets too narrow to read. The columns are capped rather
+ * than stretched, which stops two portrait shots filling a tablet screen.
+ */
+@media (max-width: 1100px) {
+    .screenshot-gallery {
+        grid-template-columns: repeat(2, minmax(0, 340px));
+    }
+}
+
 @media (max-width: 900px) {
     .game-page-heading {
         grid-template-columns: 1fr;
@@ -875,6 +934,12 @@ h3 {
 
     .screenshot-placeholder {
         max-width: 360px;
+    }
+
+    .screenshot-gallery {
+        grid-template-columns: minmax(0, 340px);
+
+        gap: 20px;
     }
 }
 
