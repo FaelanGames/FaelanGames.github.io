@@ -245,6 +245,18 @@ h3 {
     background: var(--surface);
 }
 
+/*
+ * A slim band for a bare row of links, where a full section's padding would
+ * strand the row in empty space.
+ */
+.section-compact {
+    padding: 34px 0;
+}
+
+.section-compact .page-links {
+    margin-top: 0;
+}
+
 .section-heading {
     max-width: 720px;
     margin-bottom: 42px;
@@ -441,6 +453,28 @@ h3 {
     text-decoration: underline;
 }
 
+/*
+ * A card can carry a second, quieter link beside "View game" without the
+ * two competing. The row keeps them on one line where there is room and
+ * wraps them on a narrow card.
+ */
+.game-links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    margin-top: 12px;
+}
+
+.game-links .game-link {
+    margin-top: 0;
+}
+
+.game-link-secondary {
+    color: var(--text-muted);
+}
+
 /* Game pages */
 
 .game-hero {
@@ -629,16 +663,23 @@ h3 {
 }
 
 /*
- * Phone screenshots are 9:16, so a portrait shot dropped into the hero
- * column would run absurdly tall on a wide screen. Capping the width keeps
- * the image beside the title rather than towering over it.
+ * The hero media is 9:16 portrait, so dropping it into the hero column at
+ * full size would run absurdly tall on a wide screen. Capping the width keeps
+ * it beside the title rather than towering over it.
  */
 .game-hero-shot {
     display: flex;
     justify-content: center;
+
+    /*
+     * The header is sticky, so the #trailer jump from the homepage needs the
+     * header's height kept clear or the player lands underneath it.
+     */
+    scroll-margin-top: 96px;
 }
 
-.game-hero-shot img {
+.game-hero-shot img,
+.game-hero-shot video {
     width: auto;
     height: auto;
     max-width: min(100%, 320px);
@@ -647,6 +688,18 @@ h3 {
     border-radius: var(--radius);
 
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/*
+ * preload="none" means no video metadata arrives until playback is asked
+ * for, so the 9:16 box is declared here to hold its space from first paint.
+ * The clip carries its own artwork and rounded gameplay corners; nothing
+ * decorative is drawn around it.
+ */
+.game-hero-shot video {
+    aspect-ratio: 9 / 16;
+
+    background: var(--surface);
 }
 
 /* Screenshot gallery */
@@ -703,24 +756,6 @@ h3 {
     margin: 0;
 
     color: var(--text-muted);
-}
-
-.callout {
-    margin: 28px 0;
-    padding: 24px 26px;
-
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: var(--radius);
-}
-
-.section-alt .callout {
-    background: var(--surface-alt);
-}
-
-.callout p:last-child {
-    margin-bottom: 0;
 }
 
 /* Standard content pages */
@@ -944,6 +979,11 @@ h3 {
 }
 
 @media (max-width: 760px) {
+    /* The header stacks into a taller column below this width. */
+    .game-hero-shot {
+        scroll-margin-top: 150px;
+    }
+
     .header-inner {
         flex-direction: column;
         align-items: flex-start;
