@@ -277,6 +277,35 @@ h3 {
     color: var(--accent);
 }
 
+/*
+ * A quiet closing line for a narrow section: a muted label with the studio
+ * profiles beside it, kept at body size so it reads as part of the copy
+ * above rather than as a call to action.
+ */
+.release-follow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    gap: 6px 16px;
+
+    margin-top: 22px;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+}
+
+.release-follow a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.release-follow a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
 .large-copy {
     font-size: 1.2rem;
 }
@@ -409,6 +438,31 @@ h3 {
 }
 
 .footer-links a:hover {
+    color: var(--text);
+}
+
+/*
+ * The studio profiles sit beside the page links and inherit the footer's own
+ * muted, small type; only the label is weighted up so it reads as a label
+ * rather than a third link.
+ */
+.footer-follow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 8px 16px;
+}
+
+.footer-follow-label {
+    font-weight: 600;
+}
+
+.footer-follow a {
+    text-decoration: none;
+}
+
+.footer-follow a:hover {
     color: var(--text);
 }
 
