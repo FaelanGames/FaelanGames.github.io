@@ -25,6 +25,8 @@
         rel="stylesheet"
     >
 
+    <script src="../../js/theme.js"></script>
+
     <link rel="stylesheet" href="../../css/site.css">
 </head>
 
@@ -51,6 +53,11 @@
                 <a href="../../support/">Support</a>
                 <a href="../../#contact">Contact</a>
             </nav>
+
+            <button class="theme-toggle" type="button" aria-label="Switch to light mode">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+                <span class="theme-toggle-text">Light</span>
+            </button>
         </div>
     </header>
 
@@ -91,14 +98,14 @@
 
                         <div class="game-meta game-page-meta">
                             <span>Android</span>
-                            <span>Coming soon</span>
+                            <span>Available now</span>
                             <span>No forced ads</span>
                         </div>
                     </div>
 
                     <div class="game-hero-shot" id="trailer">
                         <!--
-                            The trailer takes the hero's media slot, so the
+                            The launch video takes the hero's media slot, so the
                             heading carries one piece of media rather than a
                             player and a screenshot. preload="none" leaves the
                             MP4 unfetched until a visitor presses play.
@@ -107,20 +114,20 @@
                             controls
                             playsinline
                             preload="none"
-                            poster="../../img/endless-color-sort/trailer-poster.jpg"
+                            poster="../../img/endless-color-sort/launch-poster.jpg"
                             width="1080"
                             height="1920"
-                            aria-label="Endless Color Sort trailer"
+                            aria-label="Endless Color Sort launch video"
                         >
                             <source
-                                src="../../video/endless-color-sort-coming-soon.mp4"
+                                src="../../video/endless-color-sort-launch.mp4"
                                 type="video/mp4"
                             >
 
                             <p>
                                 Your browser cannot play this video.
-                                <a href="../../video/endless-color-sort-coming-soon.mp4">
-                                    Download the trailer (MP4, 4&nbsp;MB)
+                                <a href="../../video/endless-color-sort-launch.mp4">
+                                    Download the launch video (MP4, 6&nbsp;MB)
                                 </a>.
                             </p>
                         </video>
@@ -217,10 +224,20 @@
             <div class="container narrow">
                 <p class="eyebrow">Release</p>
 
-                <h2>Coming to Google Play</h2>
+                <h2>Available now on Google Play</h2>
 
                 <p>
-                    Endless Color Sort is coming soon to Android.
+                    Endless Color Sort is available now on Android through
+                    Google Play.
+                </p>
+
+                <p>
+                    <a
+                        class="primary-button"
+                        href="https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
+                    >
+                        Get Endless Color Sort on Google Play
+                    </a>
                 </p>
 
                 <p>
@@ -231,7 +248,7 @@
 
                 <div class="release-follow">
                     <span class="release-follow-label">
-                        Follow for release updates:
+                        Follow for game updates:
                     </span>
 
                     <a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a>
