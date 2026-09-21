@@ -4,17 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Endless Color Sort | Faelan Games Studio</title>
+    <title>Endless Color Sort | Colour-Sorting Puzzle for Android</title>
 
     <meta
         name="description"
-        content="Endless Color Sort is an Android colour-sorting puzzle game from Faelan Games Studio, with 2,000 levels, Daily Challenges, collectible bottles, unlockable backgrounds and no forced ads."
+        content="Endless Color Sort is a relaxing colour-sorting puzzle for Android with 5,000 levels, a new Daily Challenge every day, collectible bottles and no forced ads. Made by Faelan Games Studio."
     >
 
     <link
         rel="canonical"
         href="https://faelangames.com/games/endless-color-sort/"
     >
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Faelan Games Studio">
+    <meta
+        property="og:url"
+        content="https://faelangames.com/games/endless-color-sort/"
+    >
+    <meta
+        property="og:title"
+        content="Endless Color Sort | Colour-Sorting Puzzle for Android"
+    >
+    <meta
+        property="og:description"
+        content="5,000 levels, a new Daily Challenge every day, collectible bottles and no forced ads. Available now on Android."
+    >
+    <meta
+        property="og:image"
+        content="https://faelangames.com/img/endless-color-sort/social-card.jpg"
+    >
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+        property="og:image:alt"
+        content="The Endless Color Sort emblem beside the words: 5,000 levels, Daily Challenges, no forced ads, available now on Android."
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@faelangames">
 
     <link rel="icon" href="../../img/faelan-mark.png" type="image/png">
 
@@ -28,9 +56,38 @@
     <script src="../../js/theme.js"></script>
 
     <link rel="stylesheet" href="../../css/site.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Endless Color Sort",
+        "url": "https://faelangames.com/games/endless-color-sort/",
+        "description": "A relaxing colour-sorting puzzle for Android with 5,000 levels, a new Daily Challenge every day, 39 collectible bottle styles, unlockable backgrounds and no forced ads.",
+        "image": "https://faelangames.com/img/endless-color-sort/social-card.jpg",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Android",
+        "gamePlatform": "Android",
+        "genre": "Puzzle",
+        "playMode": "SinglePlayer",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.faelangames.bottlesort",
+        "author": {
+            "@type": "Organization",
+            "name": "Faelan Games Studio",
+            "url": "https://faelangames.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Faelan Games Studio",
+            "url": "https://faelangames.com/"
+        }
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
         <div class="container header-inner">
             <a
@@ -39,9 +96,11 @@
                 aria-label="Faelan Games Studio home"
             >
                 <img
-                    src="../../img/faelan-mark.png"
+                    src="../../img/faelan-mark.webp"
                     alt=""
                     class="brand-logo"
+                    width="192"
+                    height="192"
                 >
 
                 <span>Faelan Games Studio</span>
@@ -61,7 +120,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="game-hero">
             <div class="container game-hero-inner">
                 <a class="back-link" href="../../#games">
@@ -77,10 +136,11 @@
                         -->
                         <img
                             class="game-logo"
-                            src="../../img/endless-color-sort/logo.png"
+                            src="../../img/endless-color-sort/logo.webp"
                             alt=""
                             width="480"
                             height="480"
+                            fetchpriority="high"
                             decoding="async"
                         >
 
@@ -93,7 +153,7 @@
                         <p class="game-intro">
                             Pour colourful liquids from bottle to bottle until
                             every bottle holds a single matching colour, across
-                            2,000 levels of relaxing sorting puzzles.
+                            5,000 levels of relaxing sorting puzzles.
                         </p>
 
                         <div class="game-meta game-page-meta">
@@ -101,36 +161,29 @@
                             <span>Available now</span>
                             <span>No forced ads</span>
                         </div>
+
+                        <div class="game-hero-actions">
+                            <a
+                                class="primary-button"
+                                href="https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
+                            >
+                                Get it on Google Play
+                            </a>
+
+                            <a class="secondary-button" href="#trailer">
+                                Watch the launch video
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="game-hero-shot" id="trailer">
-                        <!--
-                            The launch video takes the hero's media slot, so the
-                            heading carries one piece of media rather than a
-                            player and a screenshot. preload="none" leaves the
-                            MP4 unfetched until a visitor presses play.
-                        -->
-                        <video
-                            controls
-                            playsinline
-                            preload="none"
-                            poster="../../img/endless-color-sort/launch-poster.jpg"
-                            width="1080"
-                            height="1920"
-                            aria-label="Endless Color Sort launch video"
+                    <div class="game-hero-shot">
+                        <img
+                            src="../../img/endless-color-sort/hero-gameplay.webp"
+                            alt="Endless Color Sort in play: twelve bottles of layered colour on a kitchen shelf, part-way through level 366."
+                            width="660"
+                            height="1157"
+                            decoding="async"
                         >
-                            <source
-                                src="../../video/endless-color-sort-launch.mp4"
-                                type="video/mp4"
-                            >
-
-                            <p>
-                                Your browser cannot play this video.
-                                <a href="../../video/endless-color-sort-launch.mp4">
-                                    Download the launch video (MP4, 6&nbsp;MB)
-                                </a>.
-                            </p>
-                        </video>
                     </div>
                 </div>
             </div>
@@ -138,7 +191,24 @@
 
         <section class="section">
             <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">The game</p>
+
+                    <h2>What&rsquo;s in it</h2>
+                </div>
+
                 <div class="feature-grid">
+                    <article class="feature-card">
+                        <h3>5,000 levels</h3>
+
+                        <p>
+                            Enough puzzles to last, from quick warm-ups to
+                            boards worth sitting with. Play a single level or
+                            keep going &mdash; your progress is saved either
+                            way.
+                        </p>
+                    </article>
+
                     <article class="feature-card">
                         <h3>Daily challenges</h3>
 
@@ -220,45 +290,87 @@
             </div>
         </section>
 
-        <section class="section">
+        <section id="trailer" class="section">
+            <div class="container narrow">
+                <p class="eyebrow">Launch video</p>
+
+                <h2>Endless Color Sort in motion</h2>
+
+                <p>
+                    A short look at the game in play. The video only loads once
+                    you press play.
+                </p>
+
+                <div class="video-frame">
+                    <!--
+                        preload="none" leaves the MP4 unfetched until a visitor
+                        presses play; the poster stands in until then.
+                    -->
+                    <video
+                        controls
+                        playsinline
+                        preload="none"
+                        poster="../../img/endless-color-sort/launch-poster.jpg"
+                        width="1080"
+                        height="1920"
+                        aria-label="Endless Color Sort launch video"
+                    >
+                        <source
+                            src="../../video/endless-color-sort-launch.mp4"
+                            type="video/mp4"
+                        >
+
+                        <p>
+                            Your browser cannot play this video.
+                            <a href="../../video/endless-color-sort-launch.mp4">
+                                Download the launch video (MP4, 6&nbsp;MB)
+                            </a>.
+                        </p>
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
             <div class="container narrow">
                 <p class="eyebrow">Release</p>
 
                 <h2>Available now on Google Play</h2>
 
                 <p>
-                    Endless Color Sort is available now on Android through
-                    Google Play.
+                    Endless Color Sort is out now on Android. It is the first
+                    game we have released as a husband-and-wife studio, and we
+                    are still adding to it.
                 </p>
 
-                <p>
+                <div class="button-row">
                     <a
                         class="primary-button"
                         href="https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
                     >
-                        Get Endless Color Sort on Google Play
+                        Get it on Google Play
                     </a>
-                </p>
 
-                <p>
-                    We&rsquo;re the husband-and-wife team behind Faelan Games
-                    Studio. Thanks for taking a look at what we&rsquo;ve been
-                    making together.
-                </p>
+                    <a class="secondary-button" href="../../#about">
+                        About Faelan Games
+                    </a>
+                </div>
 
-                <div class="release-follow">
-                    <span class="release-follow-label">
-                        Follow for game updates:
-                    </span>
+                <div class="follow-block">
+                    <p class="follow-label">Follow for game updates</p>
 
-                    <a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a>
-                    <a href="https://www.tiktok.com/@faelangames">TikTok</a>
-                    <a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a>
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/faelangames/">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@faelangames">TikTok</a></li>
+                        <li><a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a></li>
+                        <li><a href="https://x.com/faelangames">X</a></li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="section-compact section-alt">
+        <section class="section-compact">
             <div class="container">
                 <div class="page-links">
                     <a href="../../support/">
@@ -271,28 +383,72 @@
                 </div>
             </div>
         </section>
-
     </main>
-
     <footer class="site-footer">
-        <div class="container footer-inner">
-            <p>&copy; 2026 Faelan Games Studio</p>
-
-            <div class="footer-links">
-                <a href="../../">Home</a>
-                <a href="../../#games">Games</a>
-                <a href="../../support/">Support</a>
-                <a href="../../privacy/endless-color-sort/">
-                    Privacy
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a
+                    class="brand footer-brand-link"
+                    href="../../"
+                    aria-label="Faelan Games Studio home"
+                >
+                    <img
+                        src="../../img/faelan-mark.webp"
+                        alt=""
+                        class="brand-logo"
+                        width="192"
+                        height="192"
+                        loading="lazy"
+                    >
+                    <span>Faelan Games Studio</span>
                 </a>
+
+                <p class="footer-tagline">
+                    A husband-and-wife indie studio making mobile games
+                    together.
+                </p>
+
+                <p class="footer-contact">
+                    <a href="mailto:contact@faelangames.com">contact@faelangames.com</a>
+                </p>
             </div>
 
-            <div class="footer-follow">
-                <span class="footer-follow-label">Follow</span>
-                <a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a>
-                <a href="https://www.tiktok.com/@faelangames">TikTok</a>
-                <a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a>
-            </div>
+            <nav class="footer-column" aria-labelledby="footer-site">
+                <h2 class="footer-heading" id="footer-site">Site</h2>
+
+                <ul>
+                    <li><a href="../../#games">Games</a></li>
+                    <li><a href="../../#about">About</a></li>
+                    <li><a href="../../support/">Support</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                    <li><a href="../../privacy/">Privacy</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-labelledby="footer-follow">
+                <h2 class="footer-heading" id="footer-follow">Follow</h2>
+
+                <ul>
+                    <li><a href="https://www.instagram.com/faelangames/">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@faelangames">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a></li>
+                    <li><a href="https://x.com/faelangames">X</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-labelledby="footer-elsewhere">
+                <h2 class="footer-heading" id="footer-elsewhere">Elsewhere</h2>
+
+                <ul>
+                    <li><a href="https://ko-fi.com/faelangames">Ko-fi</a></li>
+                    <li><a href="https://github.com/FaelanGames">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Faelan Games Studio</p>
         </div>
     </footer>
 </body>

@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Faelan Games Studio | Independent Mobile Games</title>
+    <title>Faelan Games Studio | Husband-and-Wife Indie Game Studio</title>
 
     <meta
         name="description"
-        content="Faelan Games Studio is an independent studio developing mobile games for Android."
+        content="Faelan Games Studio is a husband-and-wife indie studio making mobile games together. Play Endless Color Sort now on Android and follow the games we're building next."
     >
+
+    <link rel="canonical" href="https://faelangames.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Faelan Games Studio">
+    <meta property="og:url" content="https://faelangames.com/">
+    <meta
+        property="og:title"
+        content="Faelan Games Studio | Husband-and-Wife Indie Game Studio"
+    >
+    <meta
+        property="og:description"
+        content="A husband-and-wife indie studio making mobile games together. Endless Color Sort is available now on Android."
+    >
+    <meta property="og:image" content="https://faelangames.com/img/social-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta
+        property="og:image:alt"
+        content="Faelan Games Studio: a husband-and-wife indie studio making games together, beside the Endless Color Sort emblem."
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@faelangames">
 
     <link rel="icon" href="img/faelan-mark.png" type="image/png">
 
@@ -23,9 +47,34 @@
     <script src="js/theme.js"></script>
 
     <link rel="stylesheet" href="css/site.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Faelan Games Studio",
+        "alternateName": "Faelan Games",
+        "url": "https://faelangames.com/",
+        "logo": "https://faelangames.com/img/faelan-mark.png",
+        "image": "https://faelangames.com/img/social-card.jpg",
+        "description": "Faelan Games Studio is a husband-and-wife indie studio making mobile games for Android.",
+        "email": "contact@faelangames.com",
+        "sameAs": [
+            "https://www.instagram.com/faelangames/",
+            "https://www.tiktok.com/@faelangames",
+            "https://www.youtube.com/@FaelanGamesStudio",
+            "https://www.facebook.com/profile.php?id=100090205163415",
+            "https://x.com/faelangames",
+            "https://ko-fi.com/faelangames",
+            "https://github.com/FaelanGames"
+        ]
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
         <div class="container header-inner">
             <a
@@ -34,9 +83,11 @@
                 aria-label="Faelan Games Studio home"
             >
                 <img
-                    src="img/faelan-mark.png"
+                    src="img/faelan-mark.webp"
                     alt=""
                     class="brand-logo"
+                    width="192"
+                    height="192"
                 >
                 <span>Faelan Games Studio</span>
             </a>
@@ -55,218 +106,376 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section id="home" class="hero">
-            <div class="container hero-inner">
-                <p class="eyebrow">Independent game development</p>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow">Faelan Games Studio</p>
 
-                <h1>Games built to be played, enjoyed and returned to.</h1>
+                    <h1>
+                        We&rsquo;re a husband-and-wife studio making the games
+                        we want to play.
+                    </h1>
 
-                <p class="hero-copy">
-                    Faelan Games Studio is an independent studio developing
-                    mobile games for Android, from relaxing puzzles to
-                    farming and strategy experiences.
-                </p>
+                    <p class="hero-copy">
+                        Just the two of us: we design the games together,
+                        split the code and the art between us, and play every
+                        level before anyone else does.
+                    </p>
 
-                <a class="primary-button" href="#games">
-                    Explore our games
-                </a>
+                    <div class="hero-release">
+                        <span class="status-pill">Available now on Android</span>
+
+                        <p>
+                            Our first release,
+                            <strong>Endless Color Sort</strong>, is out now on
+                            Google Play.
+                        </p>
+                    </div>
+
+                    <div class="button-row">
+                        <a
+                            class="primary-button"
+                            href="https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
+                        >
+                            Get it on Google Play
+                        </a>
+
+                        <a class="secondary-button" href="games/endless-color-sort/">
+                            Explore Endless Color Sort
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <!--
+                        The emblem already spells out the game name, so it is
+                        marked decorative; the copy beside it carries the name.
+                    -->
+                    <img
+                        class="hero-game-logo"
+                        src="img/endless-color-sort/logo.webp"
+                        alt=""
+                        width="480"
+                        height="480"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+
+                    <img
+                        class="hero-shot"
+                        src="img/endless-color-sort/hero-gameplay.webp"
+                        alt="Endless Color Sort in play: twelve bottles of layered colour on a kitchen shelf, part-way through level 366."
+                        width="660"
+                        height="1157"
+                        decoding="async"
+                    >
+                </div>
             </div>
         </section>
 
-        <section id="games" class="section">
+        <section id="games" class="section featured">
+            <div class="container featured-grid">
+                <div class="featured-content">
+                    <img
+                        class="featured-logo"
+                        src="img/endless-color-sort/logo.webp"
+                        alt=""
+                        width="480"
+                        height="480"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <p class="eyebrow">Our current release</p>
+
+                    <h2>Endless Color Sort</h2>
+
+                    <p class="large-copy">
+                        Pour colourful liquids from bottle to bottle until
+                        every bottle holds a single colour. One level or an
+                        hour &mdash; it picks up where you left it.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>
+                            <strong>5,000 levels</strong>, from quick warm-ups
+                            to puzzles worth sitting with.
+                        </li>
+
+                        <li>
+                            <strong>A new Daily Challenge every day</strong>,
+                            with a bottle to earn each month. Missed days stay
+                            open.
+                        </li>
+
+                        <li>
+                            <strong>39 bottle styles and unlockable
+                            backgrounds</strong> to collect as you play.
+                        </li>
+
+                        <li>
+                            <strong>No forced ads</strong> between levels.
+                            Rewarded ads are there if you want one.
+                        </li>
+                    </ul>
+
+                    <div class="button-row">
+                        <a
+                            class="primary-button"
+                            href="https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
+                        >
+                            Get it on Google Play
+                        </a>
+
+                        <a class="secondary-button" href="games/endless-color-sort/">
+                            See the game page
+                        </a>
+                    </div>
+                </div>
+
+                <div class="featured-media">
+                    <img
+                        src="img/endless-color-sort/daily-challenge.webp"
+                        alt="A Daily Challenge for 4 September set against a bamboo garden background, with eleven bottles left to sort."
+                        width="620"
+                        height="1087"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container narrow">
+                <p class="eyebrow">Our story</p>
+
+                <h2>Two people, one studio</h2>
+
+                <p class="large-copy">
+                    Faelan Games Studio is the two of us. We plan each game
+                    together, divide up the code, art and design, and test
+                    everything ourselves before it goes out.
+                </p>
+
+                <p>
+                    We started with the kind of game we actually reach for at
+                    the end of a day: calm, easy to pick up, and not
+                    constantly interrupting you. Endless Color Sort came out
+                    of that, and the same thinking runs through the games
+                    we&rsquo;re working on now.
+                </p>
+
+                <p>
+                    We build for Android first, we release a game when it is
+                    genuinely worth playing, and we keep updating it
+                    afterwards. It is a small operation on purpose &mdash; it
+                    means we answer our own support email and decide for
+                    ourselves what goes into a game.
+                </p>
+
+                <div class="follow-block">
+                    <p class="follow-label">Follow our journey</p>
+
+                    <ul class="social-links">
+                        <li><a href="https://www.instagram.com/faelangames/">Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@faelangames">TikTok</a></li>
+                        <li><a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a></li>
+                        <li><a href="https://x.com/faelangames">X</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="in-development" class="section section-alt">
             <div class="container">
                 <div class="section-heading">
-                    <p class="eyebrow">Our games</p>
-                    <h2>Games from Faelan Games Studio</h2>
+                    <p class="eyebrow">In development</p>
+
+                    <h2>What we&rsquo;re building next</h2>
 
                     <p>
-                        Endless Color Sort is available now on Android. Our
-                        other games are still in development, and working
-                        titles or details may change before release.
+                        Three games in progress. Some names are working titles
+                        and details may change before release &mdash; we post
+                        updates as they get closer.
                     </p>
                 </div>
 
-				<div class="game-grid">
-					<article class="game-card">
-						<div class="game-card-header">
-							<span class="game-type">Puzzle</span>
-						</div>
+                <div class="game-grid">
+                    <article class="game-card">
+                        <div class="game-card-header">
+                            <span class="game-type">Farming</span>
+                        </div>
 
-						<div class="game-title-row">
-							<h3>Endless Color Sort</h3>
-						</div>
+                        <div class="game-title-row">
+                            <h3>Endless Harvest</h3>
+                        </div>
 
-						<p>
-							Sort colourful liquids into matching bottles across
-							2,000 levels, with Daily Challenges, collectible
-							bottles and unlockable backgrounds.
-						</p>
+                        <p>
+                            Build and grow your own farm, plant and harvest
+                            crops, earn rewards, expand your land and develop
+                            your farm over time.
+                        </p>
 
-						<div class="game-links">
-							<a
-								class="game-link"
-								href="games/endless-color-sort/"
-							>
-								View game
-							</a>
+                        <a class="game-link" href="games/endless-harvest/">
+                            View Endless Harvest
+                        </a>
 
-							<a
-								class="game-link game-link-secondary"
-								href="games/endless-color-sort/#trailer"
-							>
-								Watch launch video
-							</a>
-						</div>
+                        <div class="game-meta">
+                            <span>Android</span>
+                            <span>In development</span>
+                        </div>
+                    </article>
 
-						<div class="game-meta">
-							<span>Android</span>
-							<span>Available now</span>
-						</div>
-					</article>
+                    <article class="game-card">
+                        <div class="game-card-header">
+                            <span class="game-type">Puzzle</span>
+                        </div>
 
-					<article class="game-card">
-						<div class="game-card-header">
-							<span class="game-type">Farming</span>
-						</div>
+                        <div class="game-title-row">
+                            <h3>Endless Arrow Puzzle</h3>
+                            <span class="working-title">Working title</span>
+                        </div>
 
-						<div class="game-title-row">
-							<h3>Endless Harvest</h3>
-						</div>
+                        <p>
+                            A logic puzzle where every arrow needs a clear
+                            escape route. Remove the arrows in the right order
+                            without colliding with the others.
+                        </p>
 
-						<p>
-							Build and grow your own farm, plant and harvest
-							crops, earn rewards, expand your land and develop
-							your farm over time.
-						</p>
+                        <a class="game-link" href="games/endless-arrow-puzzle/">
+                            View Endless Arrow Puzzle
+                        </a>
 
-						<a
-							class="game-link"
-							href="games/endless-harvest/"
-						>
-							View game
-						</a>
+                        <div class="game-meta">
+                            <span>Android</span>
+                            <span>In development</span>
+                        </div>
+                    </article>
 
-						<div class="game-meta">
-							<span>Android</span>
-							<span>In development</span>
-						</div>
-					</article>
+                    <article class="game-card">
+                        <div class="game-card-header">
+                            <span class="game-type">Strategy</span>
+                        </div>
 
-					<article class="game-card">
-						<div class="game-card-header">
-							<span class="game-type">Puzzle</span>
-						</div>
+                        <div class="game-title-row">
+                            <h3>Mobile Strategy</h3>
+                            <span class="working-title">Working title</span>
+                        </div>
 
-						<div class="game-title-row">
-							<h3>Endless Arrow Puzzle</h3>
-							<span class="working-title">Working title</span>
-						</div>
+                        <p>
+                            A settlement-building strategy game focused on
+                            growing a village, managing resources, developing
+                            your population and expanding your settlement.
+                        </p>
 
-						<p>
-							A logic puzzle where every arrow needs a clear
-							escape route. Remove the arrows in the right order
-							without colliding with the others.
-						</p>
+                        <a class="game-link" href="games/mobile-strategy/">
+                            View Mobile Strategy
+                        </a>
 
-						<a
-							class="game-link"
-							href="games/endless-arrow-puzzle/"
-						>
-							View game
-						</a>
-
-						<div class="game-meta">
-							<span>Android</span>
-							<span>In development</span>
-						</div>
-					</article>
-
-					<article class="game-card">
-						<div class="game-card-header">
-							<span class="game-type">Strategy</span>
-						</div>
-
-						<div class="game-title-row">
-							<h3>Mobile Strategy</h3>
-							<span class="working-title">Working title</span>
-						</div>
-
-						<p>
-							A settlement-building strategy game focused on
-							growing a village, managing resources, developing
-							your population and expanding your settlement.
-						</p>
-
-						<a
-							class="game-link"
-							href="games/mobile-strategy/"
-						>
-							View game
-						</a>
-
-						<div class="game-meta">
-							<span>Android</span>
-							<span>In development</span>
-						</div>
-					</article>
-				</div>
+                        <div class="game-meta">
+                            <span>Android</span>
+                            <span>In development</span>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="section section-alt">
-            <div class="container narrow">
-                <p class="eyebrow">About us</p>
-
-                <h2>Faelan Games Studio</h2>
-
-                <p class="large-copy">
-                    We are a small independent game development team creating
-                    games we would want to play ourselves.
-                </p>
-
-                <p>
-                    Our projects range from casual puzzle games to farming and
-                    strategy experiences. We are currently focused on Android,
-                    with Endless Color Sort available now on Google Play and
-                    more games in development.
-                </p>
-            </div>
-        </section>
-
-        <section id="contact" class="section section-alt">
+        <section id="contact" class="section">
             <div class="container narrow">
                 <p class="eyebrow">Contact</p>
 
-                <h2>Get in touch</h2>
+                <h2>Say hello</h2>
 
                 <p>
-                    Email:
-                    <a href="mailto:contact@faelangames.com">
+                    Feedback on a game, a bug you have run into, a question,
+                    or just to tell us you&rsquo;re playing &mdash; it comes
+                    straight to the two of us and we read all of it.
+                </p>
+
+                <p>
+                    <a class="contact-email" href="mailto:contact@faelangames.com">
                         contact@faelangames.com
                     </a>
+                </p>
+
+                <p>
+                    Need help with a game you are already playing? Our
+                    <a href="support/">player support page</a> has the fastest
+                    route.
                 </p>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a
+                    class="brand footer-brand-link"
+                    href="#home"
+                    aria-label="Faelan Games Studio home"
+                >
+                    <img
+                        src="img/faelan-mark.webp"
+                        alt=""
+                        class="brand-logo"
+                        width="192"
+                        height="192"
+                        loading="lazy"
+                    >
+                    <span>Faelan Games Studio</span>
+                </a>
+
+                <p class="footer-tagline">
+                    A husband-and-wife indie studio making mobile games
+                    together.
+                </p>
+
+                <p class="footer-contact">
+                    <a href="mailto:contact@faelangames.com">contact@faelangames.com</a>
+                </p>
+            </div>
+
+            <nav class="footer-column" aria-labelledby="footer-site">
+                <h2 class="footer-heading" id="footer-site">Site</h2>
+
+                <ul>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="support/">Support</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="privacy/">Privacy</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-labelledby="footer-follow">
+                <h2 class="footer-heading" id="footer-follow">Follow</h2>
+
+                <ul>
+                    <li><a href="https://www.instagram.com/faelangames/">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@faelangames">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a></li>
+                    <li><a href="https://x.com/faelangames">X</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-labelledby="footer-elsewhere">
+                <h2 class="footer-heading" id="footer-elsewhere">Elsewhere</h2>
+
+                <ul>
+                    <li><a href="https://ko-fi.com/faelangames">Ko-fi</a></li>
+                    <li><a href="https://github.com/FaelanGames">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container footer-bottom">
             <p>&copy; 2026 Faelan Games Studio</p>
-
-            <div class="footer-links">
-                <a href="support/">Support</a>
-                <a href="privacy/endless-arrow-puzzle/">
-					Privacy
-				</a>
-            </div>
-
-            <div class="footer-follow">
-                <span class="footer-follow-label">Follow</span>
-                <a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a>
-                <a href="https://www.tiktok.com/@faelangames">TikTok</a>
-                <a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a>
-            </div>
         </div>
     </footer>
 </body>

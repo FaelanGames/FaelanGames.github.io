@@ -33,10 +33,14 @@
         rel="stylesheet"
     >
 
+    <script src="../../js/theme.js"></script>
+
     <link rel="stylesheet" href="../../css/site.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
         <div class="container header-inner">
             <a
@@ -45,9 +49,11 @@
                 aria-label="Faelan Games Studio home"
             >
                 <img
-                    src="../../img/faelan-mark.png"
+                    src="../../img/faelan-mark.webp"
                     alt=""
                     class="brand-logo"
+                    width="192"
+                    height="192"
                 >
 
                 <span>Faelan Games Studio</span>
@@ -62,7 +68,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <section class="page-hero">
             <div class="container narrow">
                 <p class="eyebrow">This policy has moved</p>
@@ -83,21 +89,70 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a
+                    class="brand footer-brand-link"
+                    href="../../"
+                    aria-label="Faelan Games Studio home"
+                >
+                    <img
+                        src="../../img/faelan-mark.webp"
+                        alt=""
+                        class="brand-logo"
+                        width="192"
+                        height="192"
+                        loading="lazy"
+                    >
+                    <span>Faelan Games Studio</span>
+                </a>
+
+                <p class="footer-tagline">
+                    A husband-and-wife indie studio making mobile games
+                    together.
+                </p>
+
+                <p class="footer-contact">
+                    <a href="mailto:contact@faelangames.com">contact@faelangames.com</a>
+                </p>
+            </div>
+
+            <nav class="footer-column" aria-labelledby="footer-site">
+                <h2 class="footer-heading" id="footer-site">Site</h2>
+
+                <ul>
+                    <li><a href="../../#games">Games</a></li>
+                    <li><a href="../../#about">About</a></li>
+                    <li><a href="../../support/">Support</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                    <li><a href="../../privacy/">Privacy</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-labelledby="footer-follow">
+                <h2 class="footer-heading" id="footer-follow">Follow</h2>
+
+                <ul>
+                    <li><a href="https://www.instagram.com/faelangames/">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@faelangames">TikTok</a></li>
+                    <li><a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a></li>
+                    <li><a href="https://x.com/faelangames">X</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-column" aria-labelledby="footer-elsewhere">
+                <h2 class="footer-heading" id="footer-elsewhere">Elsewhere</h2>
+
+                <ul>
+                    <li><a href="https://ko-fi.com/faelangames">Ko-fi</a></li>
+                    <li><a href="https://github.com/FaelanGames">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container footer-bottom">
             <p>&copy; 2026 Faelan Games Studio</p>
-
-            <div class="footer-links">
-                <a href="../../">Home</a>
-                <a href="../../support/">Support</a>
-                <a href="../endless-color-sort/">Privacy</a>
-            </div>
-
-            <div class="footer-follow">
-                <span class="footer-follow-label">Follow</span>
-                <a href="https://www.youtube.com/@FaelanGamesStudio">YouTube</a>
-                <a href="https://www.tiktok.com/@faelangames">TikTok</a>
-                <a href="https://www.facebook.com/profile.php?id=100090205163415">Facebook</a>
-            </div>
         </div>
     </footer>
 
