@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        A short, tidy address to hand out on social profiles, where the full
+        Google Play URL reads badly. It is a route to the store listing, not
+        a page about the game; that stays at /games/endless-color-sort/.
+
+        GitHub Pages serves static files only, so there is no server-side
+        redirect available. The meta refresh below does the work, the script
+        beats it to the destination where scripting is on, and the link in
+        the body covers anyone whose browser does neither.
+    -->
+    <meta
+        http-equiv="refresh"
+        content="0; url=https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
+    >
+
+    <title>Play Endless Color Sort | Faelan Games Studio</title>
+
+    <meta
+        name="description"
+        content="Play Endless Color Sort on Google Play."
+    >
+
+    <!-- A utility route rather than a page worth indexing. -->
+    <meta name="robots" content="noindex">
+
+    <link rel="canonical" href="https://faelangames.com/play/">
+
+    <link rel="icon" href="../img/faelan-mark.png" type="image/png">
+
+    <script>
+        /*
+         * replace() rather than assign(), so the back button returns the
+         * visitor to wherever they came from instead of to this page.
+         */
+        window.location.replace(
+            "https://play.google.com/store/apps/details?id=com.faelangames.bottlesort"
+        );
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Endless Color Sort</h1>
+
+        <p>Opening Endless Color Sort on Google Play...</p>
+
+        <p>
+            <a href="https://play.google.com/store/apps/details?id=com.faelangames.bottlesort">
+                Continue to Google Play
+            </a>
+        </p>
+    </main>
+</body>
+</html>
