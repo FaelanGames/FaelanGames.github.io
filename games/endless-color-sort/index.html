@@ -86,6 +86,12 @@
 </head>
 
 <body>
+    <!-- The four-point star from the studio mark, reused by the status marker. -->
+    <svg class="svg-sprite" width="0" height="0" aria-hidden="true">
+        <symbol id="star" viewBox="0 0 24 24">
+            <path d="M12 1c.9 6.6 3.7 9.6 11 11-7.3 1.4-10.1 4.4-11 11-.9-6.6-3.7-9.6-11-11 7.3-1.4 10.1-4.4 11-11Z"/>
+        </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -144,7 +150,10 @@
                             decoding="async"
                         >
 
-                        <p class="eyebrow">Puzzle game</p>
+                        <p class="game-status status status-out">
+                            <svg aria-hidden="true"><use href="#star"/></svg>
+                            Available now on Android
+                        </p>
 
                         <div class="title-with-status">
                             <h1>Endless Color Sort</h1>
@@ -157,8 +166,8 @@
                         </p>
 
                         <div class="game-meta game-page-meta">
+                            <span>Puzzle game</span>
                             <span>Android</span>
-                            <span>Available now</span>
                             <span>No forced ads</span>
                         </div>
 
@@ -293,22 +302,21 @@
         </section>
 
         <section id="trailer" class="section">
-            <div class="container narrow">
-                <p class="eyebrow">Launch video</p>
-
-                <h2>Endless Color Sort in motion</h2>
-
-                <p>
-                    A short look at Endless Color Sort in play.
-                </p>
-            </div>
-
             <!--
-                The player is centred on the full content width rather than
-                inside the reading column above it, so the portrait clip sits
-                squarely under the heading block instead of off to one side.
+                The portrait clip sits beside its heading rather than below
+                it, so the section reads as one block instead of a tall column.
             -->
-            <div class="container">
+            <div class="container trailer-grid">
+                <div>
+                    <p class="eyebrow">Launch video</p>
+
+                    <h2>Endless Color Sort in motion</h2>
+
+                    <p>
+                        A short look at Endless Color Sort in play.
+                    </p>
+                </div>
+
                 <div class="video-frame">
                     <!--
                         preload="none" leaves the MP4 unfetched until a visitor

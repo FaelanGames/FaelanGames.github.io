@@ -28,6 +28,12 @@
 </head>
 
 <body>
+    <!-- The four-point star from the studio mark, reused by the status marker. -->
+    <svg class="svg-sprite" width="0" height="0" aria-hidden="true">
+        <symbol id="star" viewBox="0 0 24 24">
+            <path d="M12 1c.9 6.6 3.7 9.6 11 11-7.3 1.4-10.1 4.4-11 11-.9-6.6-3.7-9.6-11-11 7.3-1.4 10.1-4.4 11-11Z"/>
+        </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -66,12 +72,15 @@
         <section class="game-hero">
             <div class="container game-hero-inner">
                 <a class="back-link" href="../../#games">
-                    ← Back to games
+                    &larr; Back to games
                 </a>
 
                 <div class="game-page-heading">
                     <div class="game-page-title">
-                        <p class="eyebrow">Puzzle game</p>
+                        <p class="game-status status status-dev">
+                            <svg aria-hidden="true"><use href="#star"/></svg>
+                            In development
+                        </p>
 
                         <div class="title-with-status">
                             <h1>Endless Arrows</h1>
@@ -83,100 +92,43 @@
                         </p>
 
                         <div class="game-meta game-page-meta">
+                            <span>Puzzle game</span>
                             <span>Android</span>
-                            <span>In development</span>
                         </div>
                     </div>
 
-                    <div class="game-art-placeholder">
-                        <span>Game artwork coming soon</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <!--
+                        No artwork exists yet, so the game's details stand in its
+                        jar from the homepage shelf instead of an empty frame.
+                    -->
+                    <div class="game-jar-stand">
+                        <aside class="game-jar game-jar-arrows" aria-labelledby="game-details-title">
+                            <span class="jar-lid"></span>
 
-        <section class="section">
-            <div class="container game-content-grid">
-                <div class="game-main-content">
-                    <p class="eyebrow">About the game</p>
+                            <h2 id="game-details-title">Game details</h2>
 
-                    <h2>Find the way out.</h2>
+                            <dl class="game-details">
+                                <div>
+                                    <dt>Platform</dt>
+                                    <dd>Android</dd>
+                                </div>
 
-                    <p class="large-copy">
-                        Every arrow wants to escape, but choosing the wrong
-                        one can leave its path blocked.
-                    </p>
+                                <div>
+                                    <dt>Status</dt>
+                                    <dd>In development</dd>
+                                </div>
 
-                    <p>
-                        Endless Arrows is a mobile logic puzzle where the
-                        goal is to remove every arrow from the board.
-                    </p>
+                                <div>
+                                    <dt>Genre</dt>
+                                    <dd>Logic puzzle</dd>
+                                </div>
 
-                    <p>
-                        Each arrow can escape only in its facing direction.
-                        Some have a clear route immediately, while others are
-                        blocked by pieces that must be removed first.
-                    </p>
-
-                    <p>
-                        Work out the correct order, free the arrows and clear
-                        the entire puzzle.
-                    </p>
-                </div>
-
-                <aside class="game-details-card">
-                    <h2>Game details</h2>
-
-                    <dl class="game-details">
-                        <div>
-                            <dt>Platform</dt>
-                            <dd>Android</dd>
-                        </div>
-
-                        <div>
-                            <dt>Status</dt>
-                            <dd>In development</dd>
-                        </div>
-
-                        <div>
-                            <dt>Genre</dt>
-                            <dd>Logic puzzle</dd>
-                        </div>
-
-                        <div>
-                            <dt>Developer</dt>
-                            <dd>Faelan Games</dd>
-                        </div>
-
-                    </dl>
-                </aside>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Screenshots</p>
-
-                    <h2>See the game</h2>
-
-                    <p>
-                        Screenshots and gameplay images will be added as
-                        the game approaches release.
-                    </p>
-                </div>
-
-                <div class="screenshot-grid">
-                    <div class="screenshot-placeholder">
-                        <span>Screenshot coming soon</span>
-                    </div>
-
-                    <div class="screenshot-placeholder">
-                        <span>Screenshot coming soon</span>
-                    </div>
-
-                    <div class="screenshot-placeholder">
-                        <span>Screenshot coming soon</span>
+                                <div>
+                                    <dt>Developer</dt>
+                                    <dd>Faelan Games</dd>
+                                </div>
+                            </dl>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -184,50 +136,68 @@
 
         <section class="section">
             <div class="container narrow">
-                <p class="eyebrow">Release</p>
+                <p class="eyebrow">About the game</p>
 
-                <h2>Coming to Android</h2>
+                <h2>Find the way out.</h2>
 
                 <p class="large-copy">
-                    Endless Arrows is currently in development for Android
-                    and is planned for release through Google Play.
+                    Every arrow wants to escape, but choosing the wrong
+                    one can leave its path blocked.
                 </p>
 
                 <p>
-                    Screenshots, release information and a Google Play link
-                    will be added here as development progresses.
+                    Endless Arrows is a mobile logic puzzle where the
+                    goal is to remove every arrow from the board.
+                </p>
+
+                <p>
+                    Each arrow can escape only in its facing direction.
+                    Some have a clear route immediately, while others are
+                    blocked by pieces that must be removed first.
+                </p>
+
+                <p>
+                    Work out the correct order, free the arrows and clear
+                    the entire puzzle.
                 </p>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="container narrow">
-                <p class="eyebrow">Support &amp; privacy</p>
+        <section class="help" aria-label="Release and player information">
+            <div class="container help-grid">
+                <div class="tag-card">
+                    <h2>Coming to Android</h2>
 
-                <h2>Player information</h2>
+                    <p class="large-copy">
+                        Endless Arrows is currently in development for Android
+                        and is planned for release through Google Play.
+                    </p>
 
-                <p>
-                    If you need help with Endless Arrows, visit our
-                    player support page or contact us directly at
-                    <a href="mailto:support@faelangames.com">
-                        support@faelangames.com
-                    </a>.
-                </p>
+                    <p>
+                        Screenshots, release information and a Google Play link
+                        will be added here as development progresses.
+                    </p>
+                </div>
 
-                <p>
-                    For information about privacy, advertising and how data
-                    is handled in the game, read the Endless Arrows Privacy
-                    Policy.
-                </p>
+                <div class="tag-card">
+                    <h2>Player information</h2>
 
-                <div class="page-links">
-                    <a href="../../support/">
-                        Player support
-                    </a>
+                    <p>
+                        If you need help with Endless Arrows, visit our
+                        player support page or contact us directly at
+                        <a href="mailto:support@faelangames.com">support@faelangames.com</a>.
+                    </p>
 
-                    <a href="../../privacy/endless-arrow-puzzle/">
-                        Privacy policy
-                    </a>
+                    <p>
+                        For information about privacy, advertising and how data
+                        is handled in the game, read the Endless Arrows Privacy
+                        Policy.
+                    </p>
+
+                    <div class="page-links">
+                        <a href="../../support/">Player support</a>
+                        <a href="../../privacy/endless-arrow-puzzle/">Privacy policy</a>
+                    </div>
                 </div>
             </div>
         </section>

@@ -28,6 +28,12 @@
 </head>
 
 <body>
+    <!-- The four-point star from the studio mark, reused by the status marker. -->
+    <svg class="svg-sprite" width="0" height="0" aria-hidden="true">
+        <symbol id="star" viewBox="0 0 24 24">
+            <path d="M12 1c.9 6.6 3.7 9.6 11 11-7.3 1.4-10.1 4.4-11 11-.9-6.6-3.7-9.6-11-11 7.3-1.4 10.1-4.4 11-11Z"/>
+        </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -66,12 +72,15 @@
         <section class="game-hero">
             <div class="container game-hero-inner">
                 <a class="back-link" href="../../#games">
-                    ← Back to games
+                    &larr; Back to games
                 </a>
 
                 <div class="game-page-heading">
                     <div class="game-page-title">
-                        <p class="eyebrow">Farming game</p>
+                        <p class="game-status status status-dev">
+                            <svg aria-hidden="true"><use href="#star"/></svg>
+                            In development
+                        </p>
 
                         <div class="title-with-status">
                             <h1>Endless Harvest</h1>
@@ -84,100 +93,43 @@
                         </p>
 
                         <div class="game-meta game-page-meta">
+                            <span>Farming game</span>
                             <span>Android</span>
-                            <span>In development</span>
                         </div>
                     </div>
 
-                    <div class="game-art-placeholder">
-                        <span>Game artwork coming soon</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <!--
+                        No artwork exists yet, so the game's details stand in its
+                        jar from the homepage shelf instead of an empty frame.
+                    -->
+                    <div class="game-jar-stand">
+                        <aside class="game-jar game-jar-harvest" aria-labelledby="game-details-title">
+                            <span class="jar-lid"></span>
 
-        <section class="section">
-            <div class="container game-content-grid">
-                <div class="game-main-content">
-                    <p class="eyebrow">About the game</p>
+                            <h2 id="game-details-title">Game details</h2>
 
-                    <h2>Build a farm of your own.</h2>
+                            <dl class="game-details">
+                                <div>
+                                    <dt>Platform</dt>
+                                    <dd>Android</dd>
+                                </div>
 
-                    <p class="large-copy">
-                        Start small, grow crops, earn rewards and gradually
-                        develop your farm.
-                    </p>
+                                <div>
+                                    <dt>Status</dt>
+                                    <dd>In development</dd>
+                                </div>
 
-                    <p>
-                        Endless Harvest is a mobile farming game centred
-                        around the satisfying cycle of preparing land,
-                        planting crops, waiting for them to grow and
-                        harvesting the results.
-                    </p>
+                                <div>
+                                    <dt>Genre</dt>
+                                    <dd>Farming</dd>
+                                </div>
 
-                    <p>
-                        Earn rewards from your farm, develop your land and
-                        gradually expand the space available to you.
-                    </p>
-
-                    <p>
-                        The aim is to create a relaxing farming experience
-                        where your farm grows alongside your progress.
-                    </p>
-                </div>
-
-                <aside class="game-details-card">
-                    <h2>Game details</h2>
-
-                    <dl class="game-details">
-                        <div>
-                            <dt>Platform</dt>
-                            <dd>Android</dd>
-                        </div>
-
-                        <div>
-                            <dt>Status</dt>
-                            <dd>In development</dd>
-                        </div>
-
-                        <div>
-                            <dt>Genre</dt>
-                            <dd>Farming</dd>
-                        </div>
-
-                        <div>
-                            <dt>Developer</dt>
-                            <dd>Faelan Games</dd>
-                        </div>
-                    </dl>
-                </aside>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Screenshots</p>
-
-                    <h2>See the farm</h2>
-
-                    <p>
-                        Screenshots and gameplay images will be added as
-                        development continues.
-                    </p>
-                </div>
-
-                <div class="screenshot-grid">
-                    <div class="screenshot-placeholder">
-                        <span>Screenshot coming soon</span>
-                    </div>
-
-                    <div class="screenshot-placeholder">
-                        <span>Screenshot coming soon</span>
-                    </div>
-
-                    <div class="screenshot-placeholder">
-                        <span>Screenshot coming soon</span>
+                                <div>
+                                    <dt>Developer</dt>
+                                    <dd>Faelan Games</dd>
+                                </div>
+                            </dl>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -185,37 +137,61 @@
 
         <section class="section">
             <div class="container narrow">
-                <p class="eyebrow">Release</p>
+                <p class="eyebrow">About the game</p>
 
-                <h2>Coming to Android</h2>
+                <h2>Build a farm of your own.</h2>
 
                 <p class="large-copy">
-                    Endless Harvest is currently in development for Android
-                    and is planned for release through Google Play.
+                    Start small, grow crops, earn rewards and gradually
+                    develop your farm.
                 </p>
 
                 <p>
-                    More information, screenshots and a Google Play link will
-                    be added as the game moves closer to release.
+                    Endless Harvest is a mobile farming game centred
+                    around the satisfying cycle of preparing land,
+                    planting crops, waiting for them to grow and
+                    harvesting the results.
+                </p>
+
+                <p>
+                    Earn rewards from your farm, develop your land and
+                    gradually expand the space available to you.
+                </p>
+
+                <p>
+                    The aim is to create a relaxing farming experience
+                    where your farm grows alongside your progress.
                 </p>
             </div>
         </section>
 
-        <section class="section section-alt">
-            <div class="container narrow">
-                <p class="eyebrow">Support &amp; privacy</p>
+        <section class="help" aria-label="Release and player information">
+            <div class="container help-grid">
+                <div class="tag-card">
+                    <h2>Coming to Android</h2>
 
-                <h2>Player information</h2>
+                    <p class="large-copy">
+                        Endless Harvest is currently in development for Android
+                        and is planned for release through Google Play.
+                    </p>
 
-                <p>
-                    Game-specific privacy information will be added before
-                    Endless Harvest is released.
-                </p>
+                    <p>
+                        More information, screenshots and a Google Play link will
+                        be added as the game moves closer to release.
+                    </p>
+                </div>
 
-                <div class="page-links">
-                    <a href="../../support/">
-                        Player support
-                    </a>
+                <div class="tag-card">
+                    <h2>Player information</h2>
+
+                    <p>
+                        Game-specific privacy information will be added before
+                        Endless Harvest is released.
+                    </p>
+
+                    <div class="page-links">
+                        <a href="../../support/">Player support</a>
+                    </div>
                 </div>
             </div>
         </section>
