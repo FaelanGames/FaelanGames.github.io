@@ -39,6 +39,17 @@
     /* The soft shadow under a button or pill as it lifts on hover */
     --lift-shadow: 0 10px 18px -12px rgba(4, 6, 20, 0.55);
 
+    /* Homepage: faint stars, the shelf ledge and night-glass jars tinted per game */
+    --star-dot: rgba(242, 237, 225, 0.55);
+    --ledge: #262c58;
+    --glass-ecs: #2a1f45;
+    --glass-harvest: #1b3236;
+    --glass-arrows: #1a2a52;
+    --glass-strategy: #34293a;
+    --glass-edge: rgba(242, 237, 225, 0.14);
+    --glass-shine: rgba(255, 255, 255, 0.07);
+    --shadow: rgba(4, 6, 20, 0.55);
+
     color-scheme: dark;
 
     --font-body:
@@ -98,6 +109,16 @@
     --media-shadow: 0 24px 46px -18px rgba(26, 30, 58, 0.16);
 
     --lift-shadow: 0 10px 18px -12px rgba(26, 30, 58, 0.16);
+
+    --star-dot: rgba(26, 30, 58, 0.18);
+    --ledge: #ffffff;
+    --glass-ecs: #e6dff1;
+    --glass-harvest: #dcebe6;
+    --glass-arrows: #dbe3f4;
+    --glass-strategy: #efe4e4;
+    --glass-edge: rgba(26, 30, 58, 0.12);
+    --glass-shine: rgba(255, 255, 255, 0.6);
+    --shadow: rgba(26, 30, 58, 0.16);
 
     color-scheme: light;
 }
@@ -511,83 +532,103 @@ h3 {
     background: rgba(var(--accent-rgb), 0.14);
 }
 
+/* Homepage */
+
 /*
- * The availability marker. The wording carries the meaning on its own, so
- * the gold ring and dot are decoration rather than the only signal.
+ * The approved Hybrid D homepage: the studio mark against a full moon, every
+ * game standing on a shelf, the released game's layered screenshots, then the
+ * studio and ways to get in touch. Status uses the four-point star from the
+ * mark, filled for out now and outlined for in development, always beside
+ * words that carry the meaning on their own.
  */
-.status-pill {
+
+/* Holds the star symbol the status markers reuse; it draws nothing itself. */
+.svg-sprite {
+    position: absolute;
+    overflow: hidden;
+}
+
+.status {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
 
-    padding: 7px 15px;
-
-    color: var(--accent);
-
-    background: rgba(var(--glow-rgb), 0.12);
-    border: 1px solid rgba(var(--glow-rgb), 0.45);
-    border-radius: 999px;
-
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
-.status-pill::before {
-    content: "";
+.status svg {
+    flex: none;
 
-    width: 8px;
-    height: 8px;
-
-    background: currentColor;
-    border-radius: 50%;
+    width: 16px;
+    height: 16px;
 }
 
-/* Homepage hero */
+.status-out {
+    color: var(--accent);
+}
 
+.status-out svg {
+    fill: var(--accent);
+}
+
+.status-dev {
+    color: var(--text-muted);
+}
+
+.status-dev svg {
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 1.6;
+}
+
+/* Hero: a scatter of faint stars behind the studio introduction. */
 .hero {
-    padding: 92px 0 88px;
+    position: relative;
+    overflow: hidden;
 
-    background:
-        radial-gradient(
-            circle at 76% 40%,
-            rgba(var(--glow-rgb), 0.16),
-            transparent 42%
-        );
+    padding: 72px 0 96px;
+
+    background-image:
+        radial-gradient(1.5px 1.5px at 12% 22%, var(--star-dot) 50%, transparent 51%),
+        radial-gradient(1px 1px at 28% 68%, var(--star-dot) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 46% 12%, var(--star-dot) 50%, transparent 51%),
+        radial-gradient(1px 1px at 58% 84%, var(--star-dot) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 88% 18%, var(--star-dot) 50%, transparent 51%),
+        radial-gradient(1px 1px at 94% 72%, var(--star-dot) 50%, transparent 51%),
+        radial-gradient(1px 1px at 6% 88%, var(--star-dot) 50%, transparent 51%);
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(270px, 0.92fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
 
     align-items: center;
-    gap: 64px;
+    gap: 48px;
 }
 
-/*
- * The homepage headline shares its row with the game artwork, so it is set
- * smaller than the full-width headings on the inner pages.
- */
-.hero-content h1 {
+.hero h1 {
     max-width: 16ch;
-    margin-bottom: 22px;
-
-    font-size: clamp(2.3rem, 4.5vw, 3.7rem);
+    margin: 0;
 }
 
-.hero-content .hero-copy {
-    max-width: 46ch;
-    margin-bottom: 28px;
+.hero-lede {
+    max-width: 34em;
+    margin: 24px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 1.15rem;
 }
 
 .hero-release {
     display: grid;
-    gap: 12px;
+    gap: 6px;
 
-    justify-items: start;
+    margin: 32px 0 0;
 }
 
 .hero-release p {
-    max-width: 42ch;
     margin: 0;
 
     color: var(--text-muted);
@@ -595,148 +636,973 @@ h3 {
 
 .hero-release strong {
     color: var(--text);
+
+    font-weight: 600;
 }
 
-.hero-media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hero .button-row,
+.showcase .button-row {
+    gap: 12px;
 
-    gap: 18px;
+    margin-top: 28px;
 }
 
-.hero-game-logo {
-    width: clamp(130px, 16vw, 180px);
-    height: auto;
-}
-
-.hero-shot {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-
-    border-radius: 22px;
-
-    box-shadow: var(--media-shadow);
-}
-
-/* Featured release */
-
-/*
- * The one band on the site that borrows colour from the game rather than the
- * studio palette: a thin liquid-coloured rule across the top and a cool glow
- * opposite the usual gold.
- */
-.featured {
+/* The one bold element: the mark against a full moon, inside its own gold ring. */
+.moon-scene {
     position: relative;
 
-    background:
-        radial-gradient(
-            circle at 8% 0%,
-            rgba(var(--glow-rgb), 0.12),
-            transparent 46%
-        ),
-        radial-gradient(
-            circle at 92% 100%,
-            rgba(var(--cool-glow-rgb), 0.12),
-            transparent 46%
-        ),
-        var(--surface);
+    width: min(100%, 470px);
+    aspect-ratio: 1;
+    margin-inline: auto;
+
+    animation: moon-rise 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.featured::before {
-    content: "";
-
+.moon-disc {
     position: absolute;
-    inset: 0 0 auto;
+    inset: 11%;
 
-    height: 3px;
+    background:
+        radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.55), transparent 55%),
+        var(--mark-backing);
+    border-radius: 50%;
 
-    background: linear-gradient(
-        90deg,
-        #e0556b,
-        #e8a33d,
-        #4fb87a,
-        #3f9fe0,
-        #9b6fd6
-    );
+    box-shadow: 0 0 80px rgba(242, 237, 225, 0.22);
 }
 
-.featured-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
-
-    align-items: center;
-    gap: 64px;
+:root[data-theme="light"] .moon-disc {
+    box-shadow:
+        0 0 0 1px var(--border),
+        0 30px 60px rgba(26, 30, 58, 0.12);
 }
 
-.featured-logo {
-    width: clamp(120px, 14vw, 150px);
+.moon-scene img {
+    position: relative;
+
+    width: 100%;
     height: auto;
-
-    margin-bottom: 14px;
 }
 
-.featured-content h2 {
-    margin-bottom: 16px;
+.orbit {
+    position: absolute;
+    inset: -9%;
+
+    width: 118%;
+    height: 118%;
+
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 0.6;
+    opacity: 0.45;
 }
 
-.featured-content .large-copy {
-    max-width: 52ch;
-    margin-bottom: 30px;
+.orbit .spark {
+    fill: var(--accent);
+    stroke: none;
 }
 
-.feature-list {
-    display: grid;
-    gap: 14px;
+@keyframes moon-rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
 
-    max-width: 54ch;
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Our games: a navy ledge with a gold edge, the jars night glass. */
+.games {
+    padding: 8px 0 104px;
+}
+
+.games-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 24px;
+}
+
+.games-head h2 {
     margin: 0;
+}
+
+.games-head p {
+    max-width: 30em;
+    margin: 0;
+
+    color: var(--text-muted);
+}
+
+.shelf {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    align-items: end;
+
+    margin: 48px 0 0;
     padding: 0;
 
     list-style: none;
 }
 
-.feature-list li {
+/* Each cell brings its own length of ledge, so a row reads as one shelf. */
+.shelf li {
     position: relative;
 
-    padding-left: 30px;
+    padding: 0 14px 20px;
+}
+
+.shelf li[id] {
+    scroll-margin-top: var(--anchor-offset);
+}
+
+.shelf li::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 20px;
+
+    background: var(--ledge);
+    border-top: 2px solid var(--accent);
+
+    box-shadow: 0 18px 30px -16px var(--shadow);
+}
+
+.shelf li:first-child::after {
+    border-radius: 4px 0 0 4px;
+}
+
+.shelf li:last-child::after {
+    border-radius: 0 4px 4px 0;
+}
+
+:root[data-theme="light"] .shelf li::after {
+    box-shadow:
+        0 1px 0 var(--border),
+        0 18px 30px -16px var(--shadow);
+}
+
+.jar {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 0 20px 22px;
+
+    color: var(--text);
+
+    border: 1px solid var(--glass-edge);
+    border-radius: 46% 46% 16px 16px / 22% 22% 16px 16px;
+
+    box-shadow: 0 16px 26px -16px var(--shadow);
+
+    text-decoration: none;
+}
+
+/* A thin highlight down one side sells the glass without decoration. */
+.jar::before {
+    content: "";
+
+    position: absolute;
+    top: 16%;
+    left: 11%;
+
+    width: 7px;
+    height: 30%;
+
+    background: var(--glass-shine);
+    border-radius: 999px;
+
+    pointer-events: none;
+}
+
+.jar-lid {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 40%;
+    height: 14px;
+
+    background: var(--accent);
+    border-radius: 0 0 6px 6px;
+
+    transform: translateX(-50%);
+}
+
+.jar-harvest {
+    height: 290px;
+
+    background: var(--glass-harvest);
+}
+
+.jar-arrows {
+    height: 250px;
+
+    background: var(--glass-arrows);
+}
+
+.jar-strategy {
+    height: 270px;
+
+    background: var(--glass-strategy);
+}
+
+.jar h3 {
+    margin: 0;
+
+    font-size: 1.75rem;
+    line-height: 1.05;
+}
+
+.jar .kind {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+}
+
+.jar .status {
+    margin-top: 14px;
+
+    font-size: 0.9rem;
+}
+
+/* The released game holds its real artwork, cropped by the jar, never stretched. */
+.jar-ecs {
+    height: 420px;
+    padding: 0;
+
+    background: var(--glass-ecs);
+    border-color: rgba(var(--accent-rgb), 0.55);
+}
+
+.jar-ecs > img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 28%;
+}
+
+.jar-ecs .label {
+    position: relative;
+
+    margin: auto 14px 16px;
+    padding: 14px 16px;
+
+    background: var(--surface);
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: 12px;
+}
+
+:root[data-theme="light"] .jar-ecs .label {
+    background: var(--surface-alt);
+}
+
+.jar-ecs h3 {
+    font-size: 1.6rem;
+}
+
+.jar-ecs .status {
+    margin-top: 8px;
+}
+
+/*
+ * A bottle lifts and tips slightly on hover or keyboard focus, its lid easing
+ * and its name brightening with it. The lid tips from one end: the jar clips
+ * its top, so a lift would only shave it. Transforms only, so neighbouring
+ * bottles never move; touch screens get the brief pressed state alone.
+ */
+.jar {
+    transform-origin: 50% 100%;
+
+    transition:
+        transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+}
+
+.jar::before,
+.jar h3 {
+    transition:
+        transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
+        color 0.28s ease;
+}
+
+.jar-lid {
+    transform-origin: 0 50%;
+
+    transition:
+        transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
+        background-color 0.28s ease;
+}
+
+@media (hover: hover) {
+    .jar:hover {
+        transform: translateY(-5px) rotate(-1.2deg);
+
+        border-color: rgba(var(--accent-rgb), 0.75);
+
+        box-shadow:
+            0 26px 32px -18px var(--shadow),
+            0 0 0 1px rgba(var(--accent-rgb), 0.3);
+    }
+
+    .jar:hover .jar-lid {
+        background: var(--accent-hover);
+
+        transform: translateX(-50%) rotate(-4deg);
+    }
+
+    .jar:hover h3 {
+        color: var(--accent-hover);
+
+        transform: translateY(-2px);
+    }
+
+    .jar:hover::before {
+        transform: translateY(-8%);
+    }
+}
+
+.jar:focus-visible {
+    border-color: var(--accent);
+
+    transform: translateY(-5px) rotate(-1.2deg);
+}
+
+.jar:focus-visible .jar-lid {
+    background: var(--accent-hover);
+
+    transform: translateX(-50%) rotate(-4deg);
+}
+
+.jar:focus-visible h3 {
+    color: var(--accent-hover);
+
+    transform: translateY(-2px);
+}
+
+/* Press or tap: the bottle settles most of the way back for a moment. */
+.jar:active {
+    transform: translateY(-2px) rotate(-0.4deg);
+
+    transition-duration: 0.1s;
+}
+
+/* Endless Color Sort, with its layered screenshot gallery. */
+.showcase {
+    overflow-x: clip;
+
+    padding: 104px 0;
+
+    background: var(--surface);
+    border-block: 1px solid var(--border);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    align-items: center;
+    gap: 64px;
+}
+
+.gallery {
+    position: relative;
+}
+
+.stage {
+    position: relative;
+
+    aspect-ratio: 1 / 1.06;
+
+    touch-action: pan-y;
+}
+
+/*
+ * Each screenshot sits in one of three places, set by its data-pos. The
+ * transform is built from custom properties so hover and focus can lift a
+ * side shot without redefining where it sits.
+ */
+.shot {
+    position: absolute;
+    top: 4%;
+    left: 50%;
+
+    width: 50%;
+    padding: 0;
+
+    background: none;
+    border: 0;
+    border-radius: 24px;
+
+    cursor: pointer;
+
+    transform: translateX(var(--x)) translateY(var(--y, 0)) rotate(var(--r)) scale(var(--s));
+
+    transition:
+        transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.45s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.shot img {
+    width: 100%;
+    height: auto;
+
+    border: 1px solid rgba(var(--accent-rgb), 0.55);
+    border-radius: 24px;
+
+    box-shadow: 0 26px 46px -18px var(--shadow);
+}
+
+.shot[data-pos="center"] {
+    --x: -50%;
+    --r: 0deg;
+    --s: 1;
+
+    z-index: 3;
+
+    cursor: default;
+}
+
+.shot[data-pos="left"] {
+    --x: -104%;
+    --r: -7deg;
+    --s: 0.84;
+
+    z-index: 2;
+
+    filter: brightness(0.8);
+}
+
+.shot[data-pos="right"] {
+    --x: 4%;
+    --r: 7deg;
+    --s: 0.84;
+
+    z-index: 1;
+
+    filter: brightness(0.8);
+}
+
+:root[data-theme="light"] .shot:not([data-pos="center"]) {
+    filter: saturate(0.85) brightness(0.96);
+}
+
+/* Hover and focus lift a side screenshot without moving the others. */
+@media (hover: hover) {
+    .shot:not([data-pos="center"]):hover {
+        --y: -14px;
+        --s: 0.87;
+
+        filter: none;
+    }
+}
+
+.shot:not([data-pos="center"]):focus-visible {
+    --y: -14px;
+    --s: 0.87;
+
+    filter: none;
+}
+
+.shot:focus-visible {
+    outline: none;
+}
+
+.shot:focus-visible img {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Room for the longest caption, so switching screenshots never moves the page. */
+.gallery-caption {
+    min-height: 5.8em;
+    max-width: 30em;
+    margin: 18px auto 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.gallery-caption strong {
+    display: block;
+
+    color: var(--text);
+
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.gallery-hint {
+    margin: 6px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.showcase h2 {
+    margin: 16px 0 0;
+
+    font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+    line-height: 1.04;
+}
+
+.showcase-lede {
+    max-width: 31em;
+    margin: 18px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 1.15rem;
+}
+
+/* Four facts as ruled cells. */
+.facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+
+    margin: 30px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.facts li {
+    padding: 16px 0 18px;
+
+    border-top: 1px solid var(--border);
+}
+
+.facts strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font: 600 1.4rem/1.15 var(--font-display);
+}
+
+.facts span {
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+}
+
+/* Two people, one studio */
+.story {
+    padding: 112px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+
+    align-items: center;
+    gap: 72px;
+}
+
+.story-moon {
+    position: relative;
+
+    aspect-ratio: 1;
+}
+
+.story-moon::before {
+    content: "";
+
+    position: absolute;
+    inset: 9%;
+
+    background: var(--mark-backing);
+    border-radius: 50%;
+}
+
+.story-moon::after {
+    content: "";
+
+    position: absolute;
+    inset: -4%;
+
+    border: 1px solid rgba(var(--accent-rgb), 0.5);
+    border-radius: 50%;
+}
+
+.story-moon img {
+    position: relative;
+
+    width: 100%;
+    height: auto;
+}
+
+.story h2 {
+    margin: 0;
+}
+
+.story p {
+    max-width: 38em;
+    margin: 16px 0 0;
 
     color: var(--text-muted);
 }
 
-/* A small gold diamond, echoing the stars in the studio mark. */
-.feature-list li::before {
-    content: "";
+.story .story-lede {
+    color: var(--text);
 
-    position: absolute;
-    left: 4px;
-    top: 0.62em;
-
-    width: 9px;
-    height: 9px;
-
-    background: var(--accent);
-    transform: rotate(45deg);
+    font-size: 1.2rem;
 }
 
-.feature-list strong {
+.story .social-links {
+    margin-top: 26px;
+}
+
+.story .social-links a {
     color: var(--text);
 }
 
-.featured-media {
-    display: flex;
-    justify-content: center;
+/* Support and contact, as two hanging labels with a small gold ring. */
+.help {
+    padding: 96px 0;
+
+    background: var(--surface-alt);
+    border-top: 1px solid var(--border);
 }
 
-.featured-media img {
-    width: 100%;
-    max-width: 290px;
-    height: auto;
+:root[data-theme="light"] .help {
+    background: var(--surface);
+}
 
-    border-radius: 22px;
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    box-shadow: var(--media-shadow);
+    gap: 24px;
+}
+
+.tag-card {
+    position: relative;
+
+    padding: 36px 36px 36px 68px;
+
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+:root[data-theme="light"] .tag-card {
+    background: var(--surface-alt);
+}
+
+.tag-card::before {
+    content: "";
+
+    position: absolute;
+    left: 28px;
+    top: 44px;
+
+    width: 14px;
+    height: 14px;
+
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+}
+
+.tag-card h2 {
+    margin: 0;
+
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.tag-card p {
+    max-width: 30em;
+    margin: 10px 0 22px;
+
+    color: var(--text-muted);
+}
+
+.tag-card-email {
+    color: var(--accent);
+
+    font: 600 1.55rem/1.2 var(--font-display);
+    overflow-wrap: anywhere;
+    text-underline-offset: 6px;
+}
+
+.tag-card-email:hover {
+    color: var(--accent-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .moon-scene {
+        animation: none;
+    }
+
+    .shot,
+    .jar,
+    .jar::before,
+    .jar h3,
+    .jar-lid {
+        transition: none;
+    }
+
+    .jar:hover,
+    .jar:focus-visible,
+    .jar:active,
+    .jar:hover::before,
+    .jar:hover h3,
+    .jar:focus-visible h3 {
+        transform: none;
+    }
+
+    .jar:hover .jar-lid,
+    .jar:focus-visible .jar-lid {
+        transform: translateX(-50%);
+    }
+}
+
+/* Homepage, tablet: one column, the released game on its own shelf. */
+@media (max-width: 900px) {
+    .hero {
+        padding: 48px 0 72px;
+    }
+
+    .hero-grid,
+    .showcase-grid,
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .moon-scene {
+        order: -1;
+
+        width: min(78%, 360px);
+    }
+
+    .shelf {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 28px;
+    }
+
+    .shelf li:first-child {
+        grid-column: 1 / -1;
+
+        padding-inline: 20%;
+    }
+
+    .shelf li:first-child::after {
+        border-radius: 4px;
+    }
+
+    .shelf li:nth-child(2)::after {
+        border-radius: 4px 0 0 4px;
+    }
+
+    .jar-ecs {
+        height: 360px;
+    }
+
+    .jar-harvest,
+    .jar-strategy {
+        height: 240px;
+    }
+
+    .jar-arrows {
+        height: 215px;
+    }
+
+    .showcase {
+        padding: 80px 0;
+    }
+
+    .showcase-grid {
+        gap: 40px;
+    }
+
+    .gallery {
+        width: 100%;
+        max-width: 520px;
+        margin-inline: auto;
+    }
+
+    .story {
+        padding: 80px 0;
+    }
+
+    .story-grid {
+        gap: 32px;
+    }
+
+    .story-moon {
+        width: 180px;
+    }
+
+    .help {
+        padding: 72px 0;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Homepage, phone */
+@media (max-width: 640px) {
+    .hero .button-row a,
+    .showcase .button-row a {
+        flex: 1 1 100%;
+    }
+
+    .games {
+        padding-bottom: 80px;
+    }
+
+    .shelf {
+        margin-top: 36px;
+    }
+
+    .shelf li {
+        padding: 0 4px 16px;
+    }
+
+    .shelf li::after {
+        height: 16px;
+    }
+
+    .shelf li:first-child {
+        padding-inline: 12%;
+    }
+
+    .jar {
+        padding: 0 9px 13px;
+
+        border-radius: 44% 44% 12px 12px / 18% 18% 12px 12px;
+    }
+
+    .jar::before {
+        width: 5px;
+    }
+
+    .jar h3 {
+        font-size: 1.15rem;
+        overflow-wrap: anywhere;
+    }
+
+    .jar .kind {
+        font-size: 0.8rem;
+        line-height: 1.35;
+    }
+
+    .jar .status {
+        gap: 6px;
+
+        margin-top: 10px;
+
+        font-size: 0.78rem;
+    }
+
+    .jar .status svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* The star sits above the words so "In development" keeps to one line. */
+    .jar:not(.jar-ecs) .status {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+
+        white-space: nowrap;
+    }
+
+    .jar-ecs {
+        height: 330px;
+    }
+
+    .jar-ecs .label {
+        margin: auto 10px 12px;
+        padding: 12px 14px;
+    }
+
+    .jar-ecs h3 {
+        font-size: 1.45rem;
+    }
+
+    .jar-ecs .status {
+        font-size: 0.9rem;
+    }
+
+    /* Smaller turn and tighter spread keep the side shots inside the page. */
+    .stage {
+        aspect-ratio: 1 / 1.12;
+    }
+
+    .shot {
+        width: 54%;
+
+        border-radius: 18px;
+    }
+
+    .shot img {
+        border-radius: 18px;
+    }
+
+    .shot[data-pos="left"] {
+        --x: -92%;
+        --r: -4deg;
+        --s: 0.8;
+    }
+
+    .shot[data-pos="right"] {
+        --x: -8%;
+        --r: 4deg;
+        --s: 0.8;
+    }
+
+    .gallery-caption {
+        min-height: 7.6em;
+    }
+
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .tag-card {
+        padding: 28px 22px 28px 52px;
+    }
+
+    .tag-card::before {
+        left: 20px;
+        top: 36px;
+    }
+
+    .tag-card-email {
+        font-size: 1.25rem;
+    }
 }
 
 /* Follow rows */
@@ -789,68 +1655,7 @@ h3 {
     border-color: var(--accent);
 }
 
-/* Contact */
-
-.contact-email {
-    display: inline-block;
-
-    margin-top: 6px;
-
-    color: var(--accent);
-
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.contact-email:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
-}
-
-/* Game cards */
-
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    gap: 24px;
-}
-
-.game-card {
-    display: flex;
-    flex-direction: column;
-
-    padding: 30px;
-
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-}
-
-.section-alt .game-card {
-    background: var(--surface-alt);
-}
-
-.game-card-header {
-    margin-bottom: 24px;
-}
-
-.game-type,
-.game-meta span {
-    font-size: 0.78rem;
-    font-weight: 700;
-}
-
-.game-type {
-    color: var(--accent);
-
-}
-
-.game-card p {
-    color: var(--text-muted);
-}
+/* Game meta, shared by the game pages */
 
 .game-meta {
     display: flex;
@@ -867,32 +1672,9 @@ h3 {
 
     border: 1px solid var(--border);
     border-radius: 8px;
-}
 
-/* The link sits on the card floor so cards of unequal copy stay aligned. */
-.game-card .game-link {
-    margin-top: auto;
-    padding-top: 12px;
-}
-
-.game-title-row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    margin-bottom: 14px;
-}
-
-.game-title-row h3 {
-    margin: 0;
-}
-
-.game-card .game-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 9px;
+    font-size: 0.78rem;
+    font-weight: 700;
 }
 
 .working-title {
@@ -905,22 +1687,6 @@ h3 {
 
     font-size: 0.75rem;
     font-weight: 700;
-}
-
-.game-link {
-    display: inline-block;
-
-    margin-top: 12px;
-
-    color: var(--accent);
-
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.game-link:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
 }
 
 /* Game pages */
@@ -1608,23 +2374,11 @@ h3 {
 }
 
 @media (max-width: 900px) {
-    .hero {
-        padding: 72px 0 76px;
-    }
-
-    .hero-grid,
-    .featured-grid,
     .game-page-heading,
     .game-content-grid {
         grid-template-columns: 1fr;
 
         gap: 40px;
-    }
-
-    .hero-content h1,
-    .hero-content .hero-copy,
-    .hero-release p {
-        max-width: none;
     }
 
     .game-art-placeholder {
@@ -1633,10 +2387,6 @@ h3 {
 
     .game-details-card {
         max-width: 600px;
-    }
-
-    .game-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .footer-grid {
@@ -1651,7 +2401,7 @@ h3 {
 @media (max-width: 760px) {
     :root {
         /* The header stacks into a taller column below this width. */
-        --anchor-offset: 172px;
+        --anchor-offset: 136px;
     }
 
     /*
@@ -1662,9 +2412,9 @@ h3 {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
 
-        gap: 32px 12px;
+        gap: 6px 12px;
 
-        padding-block: 16px;
+        padding-block: 14px 6px;
     }
 
     .brand {
@@ -1690,18 +2440,6 @@ h3 {
 
     .section {
         padding: 72px 0;
-    }
-
-    .game-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-media {
-        gap: 14px;
-    }
-
-    .hero-shot {
-        max-width: 260px;
     }
 
     .screenshot-grid {
