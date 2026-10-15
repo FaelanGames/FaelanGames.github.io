@@ -1538,13 +1538,14 @@ h3 {
         height: 12px;
     }
 
-    /* The star sits above the words so "In development" keeps to one line. */
+    /*
+     * The star sits above the words. Where a jar is too narrow for
+     * "In development" on one line, the words wrap rather than being clipped.
+     */
     .jar:not(.jar-ecs) .status {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
-
-        white-space: nowrap;
     }
 
     .jar-ecs {
@@ -1661,6 +1662,20 @@ h3 {
     color: var(--text);
 
     border-color: var(--accent);
+}
+
+/*
+ * On the narrowest phones the three small jars give up a little side padding
+ * so the word "development" fits whole, without making the text smaller.
+ */
+@media (max-width: 360px) {
+    .shelf li {
+        padding-inline: 2px;
+    }
+
+    .jar:not(.jar-ecs) {
+        padding-inline: 5px;
+    }
 }
 
 /* Game pages */
@@ -2377,9 +2392,11 @@ h3 {
     list-style: none;
 }
 
+/* A minimum width keeps short links such as "X" comfortable to tap. */
 .footer-column a {
     display: inline-block;
 
+    min-width: 24px;
     padding: 7px 0;
 
     text-decoration: none;
