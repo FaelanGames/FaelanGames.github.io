@@ -28,6 +28,12 @@
 </head>
 
 <body>
+    <!-- The four-point star from the studio mark, reused by the status labels. -->
+    <svg class="svg-sprite" width="0" height="0" aria-hidden="true">
+        <symbol id="star" viewBox="0 0 24 24">
+            <path d="M12 1c.9 6.6 3.7 9.6 11 11-7.3 1.4-10.1 4.4-11 11-.9-6.6-3.7-9.6-11-11 7.3-1.4 10.1-4.4 11-11Z"/>
+        </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -77,44 +83,48 @@
         </section>
 
         <section class="section">
-            <div class="container narrow">
-                <p class="eyebrow">Contact support</p>
+            <div class="container support-contact">
+                <div>
+                    <p class="eyebrow">Contact support</p>
 
-                <h2>Send us an email</h2>
+                    <h2>Send us an email</h2>
 
-                <p>
-                    For support requests, contact:
-                </p>
+                    <p>
+                        For support requests, contact:
+                    </p>
 
-                <p>
-                    <a
-                        class="support-email"
-                        href="mailto:support@faelangames.com"
-                    >
-                        support@faelangames.com
-                    </a>
-                </p>
+                    <p>
+                        <a
+                            class="support-email"
+                            href="mailto:support@faelangames.com"
+                        >
+                            support@faelangames.com
+                        </a>
+                    </p>
+                </div>
 
-                <p>
-                    When contacting us about a problem, please include as much
-                    of the following information as you can:
-                </p>
+                <div class="support-panel">
+                    <p>
+                        When contacting us about a problem, please include as much
+                        of the following information as you can:
+                    </p>
 
-                <ul class="support-list">
-                    <li>The name of the game.</li>
-                    <li>A description of what happened.</li>
-                    <li>What you expected to happen instead.</li>
-                    <li>Your Android device model.</li>
-                    <li>Your Android version, if known.</li>
-                    <li>The game version, if known.</li>
-                    <li>Any steps that reliably reproduce the problem.</li>
-                    <li>A screenshot, if it helps explain the issue.</li>
-                </ul>
+                    <ul class="support-list">
+                        <li>The name of the game.</li>
+                        <li>A description of what happened.</li>
+                        <li>What you expected to happen instead.</li>
+                        <li>Your Android device model.</li>
+                        <li>Your Android version, if known.</li>
+                        <li>The game version, if known.</li>
+                        <li>Any steps that reliably reproduce the problem.</li>
+                        <li>A screenshot, if it helps explain the issue.</li>
+                    </ul>
 
-                <p>
-                    Please do not send passwords, payment card details or other
-                    sensitive personal information.
-                </p>
+                    <p class="support-warning">
+                        Please do not send passwords, payment card details or other
+                        sensitive personal information.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -125,20 +135,24 @@
                 <h2>Game-specific information</h2>
 
                 <div class="support-games">
+                    <a href="../games/endless-color-sort/">
+                        Endless Color Sort
+                        <span class="status status-out"><svg aria-hidden="true"><use href="#star"/></svg>Available now on Android</span>
+                    </a>
+
                     <a href="../games/endless-harvest/">
                         Endless Harvest
+                        <span class="status status-dev"><svg aria-hidden="true"><use href="#star"/></svg>In development</span>
                     </a>
 
                     <a href="../games/endless-arrow-puzzle/">
                         Endless Arrows
-                    </a>
-
-                    <a href="../games/endless-color-sort/">
-                        Endless Color Sort
+                        <span class="status status-dev"><svg aria-hidden="true"><use href="#star"/></svg>In development</span>
                     </a>
 
                     <a href="../games/mobile-strategy/">
                         Mobile Strategy
+                        <span class="status status-dev"><svg aria-hidden="true"><use href="#star"/></svg>In development</span>
                     </a>
                 </div>
 

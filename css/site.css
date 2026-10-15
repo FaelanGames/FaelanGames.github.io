@@ -590,9 +590,10 @@ h3 {
     padding: 72px 0 96px;
 }
 
-/* The same sky opens every game page. */
+/* The same sky opens every game, support and privacy page. */
 .hero,
-.game-hero {
+.game-hero,
+.page-hero {
     background-image:
         radial-gradient(1.5px 1.5px at 12% 22%, var(--star-dot) 50%, transparent 51%),
         radial-gradient(1px 1px at 28% 68%, var(--star-dot) 50%, transparent 51%),
@@ -2030,61 +2031,124 @@ h3 {
 
 /* Standard content pages */
 
+/*
+ * Support and privacy open on the same star-flecked sky as the homepage and
+ * game pages, with the plain reading column below. These are pages people
+ * come to for answers, so the type does the work and decoration stays out.
+ */
 .page-hero {
-    padding: 90px 0 80px;
+    padding: 64px 0 72px;
 
     border-bottom: 1px solid var(--border);
+}
 
-    background:
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(var(--glow-rgb), 0.10),
-            transparent 38%
-        );
+.page-hero h1 {
+    margin-bottom: 20px;
+}
+
+.page-hero .hero-copy {
+    margin-bottom: 0;
+}
+
+/* Support: the address on one side, what to include on the other. */
+.support-contact {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    align-items: start;
+    gap: 64px;
+}
+
+.support-contact p:not(.eyebrow) {
+    color: var(--text-muted);
 }
 
 .support-email {
     color: var(--accent);
 
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-decoration: none;
+    font: 600 clamp(1.6rem, 3vw, 2.1rem) / 1.2 var(--font-display);
+    overflow-wrap: anywhere;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
 }
 
 .support-email:hover {
     color: var(--accent-hover);
-    text-decoration: underline;
+}
+
+.support-panel {
+    padding: 32px 34px;
+
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.support-panel > p:first-child {
+    margin-top: 0;
 }
 
 .support-list {
-    margin: 28px 0;
-
+    margin: 20px 0 24px;
     padding-left: 22px;
 
     color: var(--text-muted);
 }
 
 .support-list li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    padding-left: 4px;
 }
 
+.support-list li::marker {
+    color: var(--accent);
+}
+
+/* The one warning on the page, set apart so it is not skimmed past. */
+.support-contact .support-warning {
+    margin: 0;
+    padding-left: 16px;
+
+    color: var(--text);
+
+    border-left: 2px solid var(--accent);
+}
+
+/* Game links: a card per game, its status in words beside the studio star. */
+/*
+ * The card colour is a variable set per theme, so the shared pressed state
+ * can still change the background in both themes.
+ */
 .support-games {
+    --card-background: var(--background);
+
     display: grid;
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
 
     margin: 28px 0;
 }
 
+:root[data-theme="light"] .support-games {
+    --card-background: var(--surface-alt);
+}
+
 .support-games a {
-    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 20px 22px;
 
     color: var(--text);
 
-    background: var(--surface-alt);
+    background: var(--card-background);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 16px;
 
-    font-weight: 700;
+    font: 600 1.4rem/1.15 var(--font-display);
     text-decoration: none;
 }
 
@@ -2092,21 +2156,15 @@ h3 {
     border-color: var(--accent);
 }
 
-.support-games .support-games-note {
-    display: block;
-
-    margin-top: 4px;
-
-    color: var(--text-muted);
-
+.support-games .status {
+    font-family: var(--font-body);
     font-size: 0.9rem;
-    font-weight: 400;
 }
 
 .support-note {
     color: var(--text-muted);
 
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .page-links {
@@ -2141,24 +2199,37 @@ h3 {
 
 /* Privacy policies */
 
+/*
+ * Long legal text, styled for reading and nothing else: a column of about
+ * seventy characters lined up with the heading above it, full-contrast body
+ * text, a quiet rule between numbered sections, and links that always look
+ * like links. Long addresses and codes wrap rather than widen the page.
+ */
 .policy-content {
-    max-width: 820px;
+    max-width: 44rem;
+
+    margin-inline: max(20px, calc((100% - var(--content-width)) / 2)) auto;
+
+    overflow-wrap: break-word;
 }
 
 .policy-content > section {
-    margin-bottom: 58px;
+    margin: 0;
 }
 
-.policy-content > section:last-child {
-    margin-bottom: 0;
+.policy-content > section + section {
+    margin-top: 44px;
+    padding-top: 40px;
+
+    border-top: 1px solid var(--border);
 }
 
 .policy-content h2 {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
-    font-weight: 700;
-    font-size: clamp(1.65rem, 3.2vw, 2.2rem);
-    letter-spacing: 0;
+    font-weight: 600;
+    font-size: clamp(1.55rem, 2.8vw, 2rem);
+    line-height: 1.15;
 
     /*
      * Cormorant Garamond defaults to old-style figures, which leaves the
@@ -2170,11 +2241,26 @@ h3 {
 
 .policy-content p,
 .policy-content li {
-    color: var(--text-muted);
+    color: var(--text);
+
+    line-height: 1.7;
+}
+
+.policy-content p {
+    margin: 0 0 16px;
+}
+
+.policy-content strong {
+    font-weight: 600;
 }
 
 .policy-content a {
     color: var(--accent);
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
 }
 
 .policy-content a:hover {
@@ -2189,22 +2275,29 @@ h3 {
     border-radius: 6px;
 
     font-size: 0.92em;
-
     overflow-wrap: anywhere;
 }
 
 .policy-content ul {
-    padding-left: 24px;
+    margin: 0 0 16px;
+    padding-left: 1.4em;
 }
 
 .policy-content li {
     margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+.policy-content li::marker {
+    color: var(--accent);
 }
 
 .policy-updated {
+    margin: 18px 0 0;
+
     color: var(--text-muted);
 
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* Footer */
@@ -2324,7 +2417,8 @@ h3 {
 .secondary-button,
 .page-links a,
 .theme-toggle,
-.social-links a {
+.social-links a,
+.support-games a {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
@@ -2339,7 +2433,8 @@ h3 {
     .secondary-button:hover,
     .page-links a:hover,
     .theme-toggle:hover,
-    .social-links a:hover {
+    .social-links a:hover,
+    .support-games a:hover {
         transform: translateY(-1.5px);
 
         box-shadow: var(--lift-shadow);
@@ -2356,7 +2451,8 @@ h3 {
 .secondary-button:active,
 .page-links a:active,
 .theme-toggle:active,
-.social-links a:active {
+.social-links a:active,
+.support-games a:active {
     transform: translateY(0);
 
     box-shadow: none;
@@ -2372,7 +2468,8 @@ h3 {
 .secondary-button:active,
 .page-links a:active,
 .theme-toggle:active,
-.social-links a:active {
+.social-links a:active,
+.support-games a:active {
     background: rgba(var(--accent-rgb), 0.22);
 }
 
@@ -2381,7 +2478,8 @@ h3 {
     .secondary-button,
     .page-links a,
     .theme-toggle,
-    .social-links a {
+    .social-links a,
+    .support-games a {
         transition: none;
     }
 
@@ -2389,7 +2487,8 @@ h3 {
     .secondary-button:hover,
     .page-links a:hover,
     .theme-toggle:hover,
-    .social-links a:hover {
+    .social-links a:hover,
+    .support-games a:hover {
         transform: none;
     }
 }
@@ -2409,7 +2508,8 @@ h3 {
 
 @media (max-width: 900px) {
     .game-page-heading,
-    .trailer-grid {
+    .trailer-grid,
+    .support-contact {
         grid-template-columns: 1fr;
 
         gap: 40px;
@@ -2481,6 +2581,14 @@ h3 {
 }
 
 @media (max-width: 560px) {
+    .support-games {
+        grid-template-columns: 1fr;
+    }
+
+    .support-panel {
+        padding: 26px 22px;
+    }
+
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
 

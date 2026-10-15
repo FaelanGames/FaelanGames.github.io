@@ -28,6 +28,12 @@
 </head>
 
 <body>
+    <!-- The four-point star from the studio mark, reused by the status labels. -->
+    <svg class="svg-sprite" width="0" height="0" aria-hidden="true">
+        <symbol id="star" viewBox="0 0 24 24">
+            <path d="M12 1c.9 6.6 3.7 9.6 11 11-7.3 1.4-10.1 4.4-11 11-.9-6.6-3.7-9.6-11-11 7.3-1.4 10.1-4.4 11-11Z"/>
+        </symbol>
+    </svg>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -91,16 +97,12 @@
                 <div class="support-games">
                     <a href="endless-color-sort/">
                         Endless Color Sort
-                        <span class="support-games-note">
-                            Available now on Android
-                        </span>
+                        <span class="status status-out"><svg aria-hidden="true"><use href="#star"/></svg>Available now on Android</span>
                     </a>
 
                     <a href="endless-arrow-puzzle/">
                         Endless Arrows
-                        <span class="support-games-note">
-                            In development
-                        </span>
+                        <span class="status status-dev"><svg aria-hidden="true"><use href="#star"/></svg>In development</span>
                     </a>
                 </div>
 
@@ -131,8 +133,8 @@
                 </p>
 
                 <p>
-                    The site loads its display typeface from Google Fonts, so
-                    your browser makes a request to Google when a page opens.
+                    This site loads its fonts from Google Fonts, so your
+                    browser makes a request to Google when a page opens.
                     Links out to Google Play, our social profiles and Ko-fi take
                     you to those companies' own sites, where their privacy
                     policies apply.
